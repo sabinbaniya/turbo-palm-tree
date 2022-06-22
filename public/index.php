@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
-<body>
+<body class="scroll-smooth">
     <?php include_once("./include/navbar.php") ?>
     <section class="px-8 mx-auto max-w-[1400px]">
         <section class="my-16 flex items-center justify-evenly">

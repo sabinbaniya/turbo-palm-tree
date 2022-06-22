@@ -710,6 +710,10 @@ video {
   overflow-x: hidden;
 }
 
+.scroll-smooth{
+  scroll-behavior: smooth;
+}
+
 .rounded-xl{
   border-radius: 0.75rem;
 }
@@ -993,8 +997,8 @@ body {
 }
 
 #course-slider section {
-  -webkit-animation: scroll 20s linear infinite;
-          animation: scroll 20s linear infinite;
+  -webkit-animation: scroll 30s linear infinite;
+          animation: scroll 30s linear infinite;
 }
 
 #course-slider:hover section {
