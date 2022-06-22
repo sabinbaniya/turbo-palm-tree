@@ -7,3 +7,20 @@
 body {
   font-family: "Lato", sans-serif;
 }
+
+#course-slider section {
+  animation: scroll 20s linear infinite;
+}
+
+#course-slider:hover section {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
