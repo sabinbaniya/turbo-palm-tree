@@ -8,6 +8,22 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.active {
+  transform: scale(1.02);
+}
+
+.show-sidebar {
+  display: flex;
+}
+
+.hide-sidebar {
+  display: none;
+}
+
+#arrow {
+  animation: toandfro 1s linear infinite;
+}
+
 #course-slider section {
   animation: scroll 30s linear infinite;
 }
@@ -22,5 +38,14 @@ body {
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes toandfro {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(10px);
   }
 }
