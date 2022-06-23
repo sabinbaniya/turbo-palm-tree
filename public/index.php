@@ -38,11 +38,11 @@
                 </a>
             </div>
         </section>
-        <section class="my-16">
-            <h3 class="text-center text-3xl font-bold">See what we've to offer</h3>
+        <section class="my-20">
+            <h3 class="text-center text-2xl md:text-4xl font-bold">See what we've to offer</h3>
             <p class="text-center my-4 text-gray-500">Click & Drag &#8660; below</p>
             <section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">
-                <section class="my-8 flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing " id="slider1">
+                <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing " id="slider1">
                     <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
@@ -87,6 +87,9 @@
                     </div>
                 </section>
             </section>
+        </section>
+        <section class="my-20">
+
         </section>
     </section>
 

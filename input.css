@@ -12,12 +12,8 @@ body {
   transform: scale(1.02);
 }
 
-.show-sidebar {
-  display: flex;
-}
-
-.hide-sidebar {
-  display: none;
+.animatein {
+  animation: fadein 0.5s linear forwards;
 }
 
 #arrow {
@@ -41,11 +37,11 @@ body {
   }
 }
 
-@keyframes toandfro {
+@keyframes fadein {
   0% {
-    transform: translateX(0px);
+    transform: translateY(30px);
   }
   100% {
-    transform: translateX(10px);
+    transform: translateY(0px);
   }
 }
