@@ -23,7 +23,7 @@ if (isset($_SESSION["loggedin"])) {
     <div class="min-h-screen flex space-y-8 flex-col justify-center items-center ">
         <h3 class="text-3xl font-bold text-gray-700">Login to your account</h3>
         <p class="text-gray-800">Don't have an account? <a href="./signup.php" class="underline underline-offset-2">Sign Up</a> here.</p>
-        <form action="./authenticate.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg w-80" id="login_form">
+        <form action="../../controllers/auth/login.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg w-80" id="login_form">
             <div class="flex flex-col-reverse relative">
                 <i class="fa-solid fa-at absolute top-8 left-3 text-gray-600" id="username_icon"></i>
                 <span class="text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96" id="username_error"></span>
@@ -37,7 +37,7 @@ if (isset($_SESSION["loggedin"])) {
                 <label for="password" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Password</label>
             </div>
             <div>
-                <input type="submit" value="Log In" class="cursor-pointer w-full  bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-400">
+                <input name="login" type="submit" value="Log In" class="cursor-pointer w-full  bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-400">
             </div>
         </form>
 

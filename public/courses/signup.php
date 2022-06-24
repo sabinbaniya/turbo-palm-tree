@@ -23,7 +23,7 @@ if (isset($_SESSION["loggedin"])) {
     <div class="min-h-screen flex space-y-8 flex-col justify-center items-center ">
         <h3 class="text-3xl font-bold text-gray-700">Create a new account</h3>
         <p class="text-gray-800">Already have an account? <a href="./login.php" class="underline underline-offset-2">Log In</a> here.</p>
-        <form action="./authenticate.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg" id="signup_form">
+        <form action="../../controllers/auth/signup.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg" id="signup_form">
             <div class="flex flex-col sm:flex-row justify-between sm:space-x-4 space-y-6 sm:space-y-0">
                 <div class="flex flex-col-reverse relative">
                     <i class="fa-solid fa-user absolute top-8 left-3 text-gray-600" id="name_icon"></i>
@@ -34,7 +34,7 @@ if (isset($_SESSION["loggedin"])) {
                 <div class="flex flex-col-reverse relative ">
                     <i class="fa-solid fa-envelope absolute top-8 left-3 text-gray-600" id="email_icon"></i>
                     <span class="text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96" id="email_error"></span>
-                    <input autocomplete="Email" type="email" name="Email" id="email" class="peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56" />
+                    <input autocomplete="Email" type="email" name="email" id="email" class="peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56" />
                     <label for="Email" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Email</label>
                 </div>
             </div>
@@ -78,7 +78,7 @@ if (isset($_SESSION["loggedin"])) {
                 <label for="password" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Password</label>
             </div>
             <div>
-                <input type="submit" value="Sign Up" class="cursor-pointer w-full  bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-400">
+                <input name="signup" type="submit" value="Sign Up" class="cursor-pointer w-full  bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-400">
             </div>
         </form>
 

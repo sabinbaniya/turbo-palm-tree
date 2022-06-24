@@ -75,7 +75,7 @@ form.addEventListener("submit", (e) => {
 
   // password's pattern test, throws error when user gives invalid password on password field
   const password_pattern = new RegExp(
-    "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})"
+    "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,})"
   );
   if (!password_pattern.test(password_val)) {
     password_error.innerText =
