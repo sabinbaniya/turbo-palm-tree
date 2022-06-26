@@ -5,3 +5,30 @@ if (!isset($_POST["password"], $_POST["username"])) {
     header("Location: ../../public/index.php");
     exit();
 }
+
+require_once("../../models/db/connectDB.php");
+session_start();
+
+if ($stmt = $conn->prepare('SELECT password FROM users WHERE username = ? LIMIT 1')) {
+    $stmt->bind_param('s', $_POST['username']);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($password);
+        $stmt->fetch();
+
+        if (password_verify($_POST['password'], $password)) {
+            session_regenerate_id();
+            $_SESSION['loggedin'] = TRUE;
+            $_SESSION['username'] = $_POST['username'];
+
+            header("Location: ../../public/courses");
+        } else {
+            header("Location: ./login.php?success=false");
+        }
+    } else {
+        header("Location: ./login.php?success=false");
+    }
+    $stmt->close();
+}

@@ -11,7 +11,7 @@
 
 <body>
     <?php include_once("../include/navbar.php") ?>
-
+    Welcome to dashboard of courses
 </body>
 
 </html>

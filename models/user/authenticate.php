@@ -1,18 +1,5 @@
 <?php
 
-if (!isset($_POST["password"])) {
-    // redirect if $_POST[passowrd is not set] i.e. directly accessing from url bar
-    header("Location: ../../public/index.php");
-    exit();
-}
-
-if (isset($_POST["email"])) {
-    // sign up stuff 
-
-} else {
-    //login stuff
-}
-
 // require_once("../db/connectDB.php");
 // session_start();
 
