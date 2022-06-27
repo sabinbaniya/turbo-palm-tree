@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["loggedin"])) {
-    header("Location: ./index.php");
+    header("Location: ./dashboard.php");
     exit;
 }
 ?>
@@ -32,23 +32,23 @@ if (isset($_SESSION["loggedin"])) {
                     <label for="name" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Name</label>
                 </div>
                 <div class="flex flex-col-reverse relative ">
-                    <i class="fa-solid fa-envelope absolute top-8 left-3 text-gray-600" id="email_icon"></i>
-                    <span class="text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96" id="email_error"></span>
-                    <input autocomplete="Email" type="email" name="email" id="email" class="peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56" />
+                    <?= isset($_GET["email"]) ? "<i class='fa-solid fa-envelope absolute top-8 left-3 text-gray-600 invalid_input_icon' id='email_icon'></i>" : "<i class='fa-solid fa-envelope absolute top-8 left-3 text-gray-600' id='email_icon'></i>" ?>
+                    <?= isset($_GET["email"]) ? "<span class='text-red-500 text-xs absolute -bottom-4 left-0 w-96' id='email_error'>Email Already in use.</span>" :  "<span class='text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96' id='email_error'></span>" ?>
+                    <?= isset($_GET["email"]) ? "<input autocomplete='Email' type='email' name='email' id='email' class='peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56 invalid_input' />" :  "<input autocomplete='Email' type='email' name='email' id='email' class='peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56' />" ?>
                     <label for="Email" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Email</label>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row justify-between sm:space-x-4 space-y-6 sm:space-y-0">
                 <div class="flex flex-col-reverse relative">
-                    <i class="fa-solid fa-mobile-screen-button absolute top-8 left-3 valid_input_icon" id="number_icon"></i>
+                    <i class="fa-solid fa-mobile-screen-button absolute top-8 left-3 text-gray-600" id="number_icon"></i>
                     <span class="text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96" id="number_error"></span>
                     <input autocomplete="number" type="tel" name="number" id="number" class="peer mt-4 border-2 border-gray-200 pl-8 px-4 py-2 h-12 rounded-lg  w-56" />
                     <label for="number" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Phone number</label>
                 </div>
                 <div class="flex flex-col-reverse relative">
-                    <i class="fa-solid fa-at absolute top-8 left-3 valid_input_icon" id="username_icon"></i>
-                    <span class="text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96" id="username_error"></span>
-                    <input autocomplete="username" type="text" name="username" id="username" class="peer mt-4 border-2 border-gray-200 pl-8 px-4 py-2 h-12 rounded-lg  w-56" />
+                    <?= isset($_GET["uname"]) ? "<i class='fa-solid fa-at absolute top-8 left-3 text-gray-600 invalid_input_icon' id='username_icon'></i>" : "<i class='fa-solid fa-at absolute top-8 left-3 text-gray-600' id='username_icon'></i>" ?>
+                    <?= isset($_GET["uname"]) ? "<span class='text-red-500 text-xs absolute -bottom-4 left-0 w-96' id='username_error'>Username is already taken</span>" : "<span class='text-red-500 hidden text-xs absolute -bottom-4 left-0 w-96' id='username_error'></span>" ?>
+                    <?= isset($_GET["uname"]) ? "<input autocomplete='username' type='text' name='username' id='username' class='peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56 invalid_input' />" :  "<input autocomplete='username' type='text' name='username' id='username' class='peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg  w-56' />" ?>
                     <label for="username" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Username</label>
                 </div>
             </div>

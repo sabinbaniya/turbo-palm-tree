@@ -23,12 +23,12 @@ if ($stmt = $conn->prepare('SELECT password FROM users WHERE username = ? LIMIT 
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
 
-            header("Location: ../../public/courses");
+            header("Location: ../../public/courses/dashboard.php");
         } else {
-            header("Location: ./login.php?success=false");
+            header("Location: ../../public/courses/login.php?success=false");
         }
     } else {
-        header("Location: ./login.php?success=false");
+        header("Location: ../../public/courses/login.php?success=false");
     }
     $stmt->close();
 }

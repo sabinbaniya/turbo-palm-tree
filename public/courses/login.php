@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["loggedin"])) {
-    header("Location: ./index.php");
+    header("Location: ./dashboard.php");
     exit;
 }
 ?>
@@ -32,7 +32,7 @@ if (isset($_SESSION["loggedin"])) {
             </div>
             <div class="flex flex-col-reverse relative" style="margin-bottom: 60px;">
                 <i class="fa-solid fa-lock absolute top-8 left-3 text-gray-600" id="password_icon"></i>
-                <span class="text-red-500 hidden text-xs absolute -bottom-12 left-0 " id="password_error"></span>
+                <?= isset($_GET["success"]) ? "<span class='text-red-500 text-xs absolute -bottom-12 left-0 ' id='password_error'>Invalid Credentials</span>" : "<span class='text-red-500 hidden text-xs absolute -bottom-12 left-0 ' id='password_error'></span>" ?>
                 <input autocomplete="current-password" type="password" name="password" id="password" class="peer mt-4 border-2 border-gray-200 px-4 pl-8 py-2 h-12 rounded-lg" />
                 <label for="password" class="peer-focus:text-lg transition-all block text-md text-gray-700 absolute -top-[10px]">Password</label>
             </div>
