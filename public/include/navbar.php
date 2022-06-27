@@ -80,7 +80,7 @@ echo "
       class='flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8'
     >
       <div>
-        <p class=''>Pixel IT Magic Solutions</p>
+        <p class=''>D & B Engineering</p>
       </div>
       <!-- menu for desktop starts -->
       <nav class='hidden lg:block'>

@@ -39,7 +39,7 @@ if (!isset($_SESSION["loggedin"])) {
             </ul>
         </nav>
         <div class="hidden md:block">
-            <a href="./logout.php" class="border-[3px] px-6 py-2 rounded-lg border-gray-500 hover:bg-black hover:text-white font-semibold transition-all">Log Out</a>
+            <a href="./logout.php" class="border-[3px] px-6 py-2 rounded-lg border-red-500 hover:bg-red-700 hover:text-white font-semibold transition-all">Log Out</a>
         </div>
         <!-- menu for desktop ends -->
 
@@ -54,7 +54,7 @@ if (!isset($_SESSION["loggedin"])) {
                 <a onclick="closeMenu()" class="py-2 mt-4" href="">Item 1</a>
                 <a onclick="closeMenu()" class="py-2" href="">Item 2 </a>
                 <a onclick="closeMenu()" class="py-2" href="">Item 3 </a>
-                <a href="./logout.php" onclick="closeMenu()" class="border-2 my-2 px-6 py-2 inline-block rounded-lg border-gray-500 font-semibold transition-all">Log Out</a>
+                <a href="./logout.php" onclick="closeMenu()" class="border-2 my-2 px-6 py-2 inline-block rounded-lg border-red-500 font-semibold transition-all">Log Out</a>
             </div>
         </div>
         <!-- mobile menu endss  -->
