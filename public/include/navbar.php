@@ -36,7 +36,7 @@ function check_path($path)
 function get_relative_path($path)
 {
   $url = $_SERVER["REQUEST_URI"];
-  if (endsWith($url, "courses/")) {
+  if (endsWith($url, "courses/") || endsWith($url, "courses/index.php")) {
     switch ($path) {
       case "":
         return "../index.php";

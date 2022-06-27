@@ -10,20 +10,28 @@
     <script src="./assets/js/index.js"></script>
     <style>
         /* Hide scrollbar for Chrome, Safari and Opera */
-        #slider1::-webkit-scrollbar {
+        .slider1::-webkit-scrollbar {
             display: none;
         }
 
         /* Hide scrollbar for IE, Edge and Firefox */
-        #slider1 {
+        .slider1 {
             -ms-overflow-style: none;
             /* IE and Edge */
             scrollbar-width: none;
             /* Firefox */
         }
+
+        #testimonials {
+            scroll-behavior: smooth;
+        }
     </style>
     <!-- font awesome icon cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font's link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body class="scroll-smooth">
@@ -42,43 +50,43 @@
             <h3 class="text-center text-2xl md:text-4xl font-bold">See what we've to offer</h3>
             <p class="text-center my-4 text-gray-500">Click & Drag &#8660; below</p>
             <section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">
-                <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing " id="slider1">
-                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">
+                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-orange-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-orange-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-indigo-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-indigo-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-amber-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                    <div class="rounded-xl card bg-amber-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-amber-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-amber-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-lime-400 text-white p-8 space-y-4 flex-shrink-0 w-80">
+                    <div class="rounded-xl card bg-lime-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-lime-500 decoration-2">Course Name</p>
                         <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
                         <a href="" class="inline-block">
@@ -89,7 +97,65 @@
             </section>
         </section>
         <section class="my-20">
-
+            <h3 class="text-center text-gray-800 text-2xl font-bold mb-20">Here's what others say about us</h3>
+            <section class="flex justify-between items-center space-x-4 overflow-auto slider1" id="testimonials">
+                <div class="space-y-8 max-w-sm md:max-w-lg lg:max-w-xl shrink-0 bg-[#abc] rounded-xl p-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-7xl font-bold text-transparent" style="-webkit-text-stroke: 1px black;font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
+                            <p class=" text-stone-500">CEO of JHON INC.</p>
+                        </div>
+                        <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
+                    </div>
+                </div>
+                <div class="space-y-8 max-w-sm md:max-w-lg lg:max-w-xl shrink-0 bg-[#abc] rounded-xl p-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-7xl font-bold text-transparent" style="-webkit-text-stroke: 1px black;font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
+                            <p class=" text-stone-500">CEO of JHON INC.</p>
+                        </div>
+                        <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
+                    </div>
+                </div>
+                <div class="space-y-8 max-w-sm md:max-w-lg lg:max-w-xl shrink-0 bg-[#abc] rounded-xl p-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-7xl font-bold text-transparent" style="-webkit-text-stroke: 1px black;font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
+                            <p class=" text-stone-500">CEO of JHON INC.</p>
+                        </div>
+                        <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
+                    </div>
+                </div>
+                <div class="space-y-8 max-w-sm md:max-w-lg lg:max-w-xl shrink-0 bg-[#abc] rounded-xl p-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-7xl font-bold text-transparent" style="-webkit-text-stroke: 1px black;font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
+                            <p class=" text-stone-500">CEO of JHON INC.</p>
+                        </div>
+                        <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
+                    </div>
+                </div>
+            </section>
+            <section class="flex justify-center w-40 h-16 shadow-xl mx-auto my-8 rounded-full overflow-hidden">
+                <button class="w-full h-full basis-1/2 hover:bg-gray-100 transition-all text-3xl rounded-l-full" id="button_backward">
+                    &larr;
+                </button>
+                <button class="w-full h-full basis-1/2 hover:bg-gray-100 transition-all text-3xl rounded-r-full" id="button_forward">
+                    &rarr;
+                </button>
+            </section>
         </section>
     </section>
 
