@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function endsWith($string, $endString)
 {
@@ -115,13 +116,22 @@ echo "
       <div class='hidden lg:block'>
       " .
   (get_relative_path("courses") === "./" ?
-    "<button>
+    (isset($_SESSION["loggedin"]) ? "
+    <button>
+          <a
+            href='./dashboard.php'
+            class='border-[3px] px-6 py-2 rounded-lg border-gray-500 hover:bg-black hover:text-white font-semibold transition-all'
+            >Dashboard</a
+          >
+        </button>
+    
+    " : "<button>
           <a
             href='./login.php'
             class='border-[3px] px-6 py-2 rounded-lg border-gray-500 hover:bg-black hover:text-white font-semibold transition-all'
             >Login</a
           >
-        </button>" :
+        </button>") :
     "<button>
           <a
             href='" . get_relative_path("contact") . "'
