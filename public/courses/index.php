@@ -29,10 +29,10 @@
     <?php include_once("../include/navbar.php") ?>
     <section class="lg:max-w-[1400px] px-8 mx-auto">
         <section class="my-20">
-            <h3 class="font-bold text-2xl md:text-5xl">Here's what we currently offer</h3>
+            <h3 class="font-bold text-2xl md:text-4xl">Here's what we currently offer</h3>
             <section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">
                 <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">
-                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96">
+                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Computer System Administrator & Developers</p>
                         <p class="text-gray-100">
                         <p>Credit Hours: 1320 Hours</p>
@@ -42,26 +42,55 @@
                             <li>and more...</li>
                         </ul>
                         </p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Enroll Now</button>
+                        <a href="./computer-system-administrator-and-developer.php" class="inline-block">
+                            <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Computer Operators Course</p>
+                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Computer Operator Course</p>
                         <p class="text-gray-100">
-                        <p>Credit Hours: 230 Hours</p>
+                        <p>Credit Hours: 220 credit Hours</p>
                         <p class="text-lg font-semibold">Includes: </p>
                         <ul>
                             <li>Typing Course 15 days <span class="bg-green-500 rounded-full inline-block px-4 py-1">Free</span></li>
                             <li>and more...</li>
                         </ul>
                         </p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Enroll Now</button>
+                        <a href="./computer-operator-course.php" class="inline-block">
+                            <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-gray-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-not-allowed opacity-30">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-500 decoration-2">More Courses</p>
+                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-orange-500 decoration-2">Foundation of IT</p>
+                        <p class="text-gray-100">
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>Computer Fundamentals</li>
+                            <li>Assembling / Dessembling computer parts</li>
+                            <li>Fundamentals of web</li>
+                            <li>And more...</li>
+                        </ul>
+                        </p>
+                        <a href="./foundation-of-it.php" class="inline-block">
+                            <button class="px-4 py-2 bg-orange-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
+                        </a>
+                    </div>
+                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-indigo-500 decoration-2">Typing Course</p>
+                        <p class="text-gray-100">
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>English Typing</li>
+                            <li>Nepali Typing</li>
+                            <li>And more...</li>
+                        </ul>
+                        </p>
+                        <a href="./typing-course.php" class="inline-block">
+                            <button class="px-4 py-2 bg-indigo-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
+                        </a>
+                    </div>
+                    <div class="rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-not-allowed opacity-30 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-700 decoration-2">More Courses</p>
                         <p class="text-gray-100">More courses coming soon!</p>
                         <a href="" class="inline-block">
                             <button class="px-4 py-2 bg-gray-800 font-bold rounded-full transition-all cursor-not-allowed">Coming soon</button>
@@ -98,7 +127,7 @@
             </section>
         </section>
         <footer class="py-4">
-            <p class="text-center font-semibold text-gray-900">Copyright &copy; <span id="current_year"></span></p>
+            <p class="text-center font-semibold text-gray-900">Copyright &copy; <span id="current_year"></span> D & B Engineering</p>
         </footer>
     </footer>
 </body>

@@ -1,7 +1,7 @@
 <?php
 
 echo '
-     <footer class="border-t-2  border-gray-200 bg-no-repeat bg-left-bottom bg-cover" style="background-image: url(\'./assets/images/pattern-curve.svg\')">
+     <footer class="border-t-2  border-gray-200 bg-no-repeat bg-left-bottom bg-cover" style="background-image: url(\'../assets/images/pattern-curve.svg\')">
         <section class="lg:max-w-[1400px] max-w-[90%] space-y-8 mx-auto flex flex-col text-center md:text-left md:flex-row justify-between items-center px-8 py-8">
             <section class="basis-1/3">
                 <p class="font-bold text-gray-800 text-xl">D & B Engineering</p>
@@ -9,10 +9,10 @@ echo '
             </section>
             <section class="basis-1/3 ">
                 <ul class="space-y-4">
-                    <li><a href="../public">Home</a></li>
-                    <li><a href="./about.php">About us</a></li>
-                    <li><a href="./courses">Courses</a></li>
-                    <li><a href="./services.php">Our services</a></li>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../about.php">About us</a></li>
+                    <li><a href="../courses">Courses</a></li>
+                    <li><a href="../services.php">Our services</a></li>
                 </ul>
             </section>
             <section>
