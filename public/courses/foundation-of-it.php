@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php require_once("./include/navbar.php") ?>
+    <?php require_once("../include/navbar.php") ?>
     <section class="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-start">
         <section class="basis-1/2">
             <section class="my-20 space-y-6 text-gray-600">

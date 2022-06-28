@@ -51,46 +51,68 @@
             <p class="text-center my-4 text-gray-500">Click & Drag &#8660; below</p>
             <section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">
                 <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">
-                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
+                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Computer System Administrator & Developers</p>
+                        <p class="text-gray-100">
+                        <p>Credit Hours: 1320 Hours</p>
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>Foundation of IT <span class="bg-green-500 rounded-full inline-block px-4 py-1">Free</span></li>
+                            <li>and more...</li>
+                        </ul>
+                        </p>
+                        <a href="./courses/computer-system-administrator-and-developer.php" class="inline-block">
+                            <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
+                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Computer Operator Course</p>
+                        <p class="text-gray-100">
+                        <p>Credit Hours: 220 credit Hours</p>
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>Typing Course 15 days <span class="bg-green-500 rounded-full inline-block px-4 py-1">Free</span></li>
+                            <li>and more...</li>
+                        </ul>
+                        </p>
+                        <a href="./courses/computer-operator-course.php" class="inline-block">
+                            <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-orange-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-orange-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
+                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-orange-500 decoration-2">Foundation of IT</p>
+                        <p class="text-gray-100">
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>Computer Fundamentals</li>
+                            <li>Assembling / Dessembling computer parts</li>
+                            <li>Fundamentals of web</li>
+                            <li>And more...</li>
+                        </ul>
+                        </p>
+                        <a href="./courses/foundation-of-it.php" class="inline-block">
+                            <button class="px-4 py-2 bg-orange-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-indigo-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-indigo-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
+                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-indigo-500 decoration-2">Typing Course</p>
+                        <p class="text-gray-100">
+                        <p class="text-lg font-semibold">Includes: </p>
+                        <ul>
+                            <li>English Typing</li>
+                            <li>Nepali Typing</li>
+                            <li>And more...</li>
+                        </ul>
+                        </p>
+                        <a href="./courses/typing-course.php" class="inline-block">
+                            <button class="px-4 py-2 bg-indigo-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                         </a>
                     </div>
-                    <div class="rounded-xl card bg-amber-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-amber-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-amber-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
-                        </a>
-                    </div>
-                    <div class="rounded-xl card bg-lime-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-lime-500 decoration-2">Course Name</p>
-                        <p class="text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi beatae sunt eveniet ipsa veritatis quaerat laboriosam voluptates, maxime dolor!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-lime-800 font-bold rounded-full hover:-translate-y-1 transition-all">Take Course</button>
+                    <div class="rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-not-allowed opacity-30 flex flex-col justify-between items-start">
+                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-700 decoration-2">More Courses</p>
+                        <p class="text-gray-100">More courses coming soon!</p>
+                        <a class="inline-block">
+                            <button class="px-4 py-2 bg-gray-800 font-bold rounded-full transition-all cursor-not-allowed">Coming soon</button>
                         </a>
                     </div>
                 </section>

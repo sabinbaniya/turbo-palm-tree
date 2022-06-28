@@ -55,6 +55,26 @@ function get_relative_path($path)
         return "../contact.php";
         break;
     }
+    return;
+  }
+  if (strpos($url, "/courses/") !== false) {
+    switch ($path) {
+      case "":
+        return "../index.php";
+        break;
+      case "about":
+        return "../about.php";
+        break;
+      case "courses":
+        return "../courses";
+        break;
+      case "services":
+        return "../services.php";
+        break;
+      case "contact":
+        return "../contact.php";
+        break;
+    }
   }
   switch ($path) {
     case "":
@@ -121,7 +141,7 @@ echo "
           <a
             href='./dashboard.php'
             class='border-[3px] px-6 py-2 rounded-lg border-gray-500 hover:bg-black hover:text-white font-semibold transition-all'
-            >Dashboard</a
+            >Dashboard <i class='fa-solid fa-table-columns' style='margin-left:6px'></i></a
           >
         </button>
     
@@ -129,7 +149,7 @@ echo "
           <a
             href='./login.php'
             class='border-[3px] px-6 py-2 rounded-lg border-gray-500 hover:bg-black hover:text-white font-semibold transition-all'
-            >Login</a
+            >Login  <i class='fa-solid fa-arrow-right-to-bracket' style='margin-left: 6px'></i></a
           >
         </button>") :
     "<button>
