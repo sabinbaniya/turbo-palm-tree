@@ -2,11 +2,11 @@
 
 if (!isset($_POST["password"], $_POST["name"], $_POST["email"], $_POST["birth-date"], $_POST["number"], $_POST["gender"], $_POST["username"])) {
     // redirect if directly accessing from url bar
-    header("Location: ../../public/index.php");
+    header("Location: ../../../public/index.php");
     exit();
 }
 
-require_once("../../models/db/connectDB.php");
+require_once("../../../models/db/connectDB.php");
 session_start();
 
 
@@ -20,18 +20,18 @@ if ($stmt = $conn->prepare("SELECT username, email FROM users WHERE username = ?
 
     if ($_POST["username"] === $username && $_POST["email"] === $email) {
         // $location = str_replace("\\", "/", __DIR__) . "/signup.php?uname=invalid&email=invalid";
-        header("Location: ../../public/courses/signup.php?uname=invalid&email=invalid");
+        header("Location: ../../../public/courses/signup.php?uname=invalid&email=invalid");
         exit();
     }
 
     if ($_POST["username"] === $username) {
         // $location = str_replace("\\", "/", __DIR__) . "/signup.php?uname=invalid";
-        header("Location: ../../public/courses/signup.php?uname=invalid");
+        header("Location: ../../../public/courses/signup.php?uname=invalid");
         exit();
     }
     if ($_POST["email"] === $email) {
         // $location = str_replace("\\", "/", __DIR__) . "/signup.php?email=invalid";
-        header("Location: ../../public/courses/signup.php?email=invalid");
+        header("Location: ../../../public/courses/signup.php?email=invalid");
         exit();
     }
 }
@@ -45,11 +45,11 @@ if ($stmt = $conn->prepare('INSERT INTO users (name, email, mobile, password, da
 
     if ($stmt->affected_rows > 0) {
         // $location = str_replace("\\", "/", __DIR__) . "/courses/login.php?result=success";
-        header("Location: ../../public/courses/login.php?result=success");
+        header("Location: ../../../public/courses/login.php?result=success");
         exit();
     } else {
         // $location = str_replace("\\", "/", __DIR__) . "/courses/signup.php?result=failure";
-        header("Location: ../../public/courses/signup.php?result=failure");
+        header("Location: ../../../public/courses/signup.php?result=failure");
         exit();
     }
     $stmt->close();

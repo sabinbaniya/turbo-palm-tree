@@ -23,7 +23,7 @@ if (isset($_SESSION["loggedin"])) {
     <div class="min-h-screen flex space-y-8 flex-col justify-center items-center ">
         <h3 class="text-3xl font-bold text-gray-700">Create a new account</h3>
         <p class="text-gray-800">Already have an account? <a href="./login.php" class="underline underline-offset-2">Log In</a> here.</p>
-        <form action="../../controllers/auth/signup.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg" id="signup_form">
+        <form action="../../controllers/user/auth/signup.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg" id="signup_form">
             <div class="flex flex-col sm:flex-row justify-between sm:space-x-4 space-y-6 sm:space-y-0">
                 <div class="flex flex-col-reverse relative">
                     <i class="fa-solid fa-user absolute top-8 left-3 text-gray-600" id="name_icon"></i>

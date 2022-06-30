@@ -1,9 +1,9 @@
 <?php
-require("../../models/db/connectDB.php");
+require("../../../models/db/connectDB.php");
 
 if (!isset($_POST["password"], $_POST["username"])) {
     // redirect if $_POST[passowrd is not set] i.e. directly accessing from url bar
-    header("Location: ../../public/index.php");
+    header("Location: ../../../public/index.php");
     exit();
 }
 
@@ -23,12 +23,12 @@ if ($stmt = $conn->prepare('SELECT password FROM users WHERE username = ? LIMIT 
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
 
-            header("Location: ../../public/courses/dashboard.php");
+            header("Location: ../../../public/courses/dashboard.php");
         } else {
-            header("Location: ../../public/courses/login.php?success=false");
+            header("Location: ../../../public/courses/login.php?success=false");
         }
     } else {
-        header("Location: ../../public/courses/login.php?success=false");
+        header("Location: ../../../public/courses/login.php?success=false");
     }
     $stmt->close();
 }
