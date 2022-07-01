@@ -4,6 +4,14 @@ if (!isset($_SESSION["admin_loggedin"])) {
     header("Location: ../index.php");
     exit();
 }
+
+if (isset($_POST["submit"])) {
+    require_once("../../controllers/admin/course/create-course.php");
+    $res = create_course();
+    if ($res) {
+        echo "success";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +24,6 @@ if (!isset($_SESSION["admin_loggedin"])) {
     <title>Create a Course | D & B Engineering</title>
     <link rel="stylesheet" href="../assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 
 <body>
@@ -26,7 +33,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
             <section class="py-20">
                 <h3 class="text-2xl md:text-4xl font-bold text-center">Create New Course</h3>
                 <section class="my-10">
-                    <form action="./create-course.php" method="POST" class="space-y-4 max-w-lg mx-auto">
+                    <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" class="space-y-4 max-w-lg mx-auto" enctype="multipart/form-data">
                         <div class="flex flex-col sm:flex-row sm:space-x-4">
                             <div class="relative flex flex-col-reverse">
                                 <i class="fa-solid fa-book absolute top-12 left-3 text-gray-600"></i>
@@ -87,10 +94,8 @@ if (!isset($_SESSION["admin_loggedin"])) {
                             <input type="file" name="course_structure_downloadable" id="course_structure_downloadable" accept="application/pdf" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                             <label for="course_structure_downloadable">Course Structure Downloadable (upload pdf)</label>
                         </div>
-
-
                         <div>
-                            <input type="submit" disabled value="Create" name="submit" id="btn" class="px-4 py-2 w-full bg-blue-300 cursor-not-allowed font-bold text-white rounded-full">
+                            <input type="submit" value="Create" name="submit" id="btn" class="px-4 py-2 w-full bg-blue-300 cursor-not-allowed font-bold text-white rounded-full">
                         </div>
                         <div>
                             <a href="./dashboard.php">
