@@ -9,9 +9,9 @@ if (isset($_POST["submit"])) {
     require_once("../../controllers/admin/dashboard/editAdminDetails.php");
     $res = editAdminDetails();
     if ($res) {
-        echo "done";
+        header("Location: ./settings.php?success=true");
     } else {
-        echo "not done";
+        header("Location: ./settings.php?success=false");
     }
 } else {
     require_once("../../controllers/admin/dashboard/getAdminDetails.php");
@@ -35,7 +35,17 @@ if (isset($_POST["submit"])) {
 <body>
     <?php require_once("./include/navbar.php") ?>
     <section class="bg-gray-100 min-h-[88.5vh]">
-        <section class="max-w-[1400px] mx-auto px-8">
+        <?php
+        require_once("./include/notification.php");
+        if (isset($_GET["success"])) {
+            if ($_GET["success"] === "true") {
+                notification("Successfully updated record", "success");
+            } else {
+                notification("Couldn't update record, please try again later.", "failure");
+            }
+        }
+        ?>
+        <section class=" max-w-[1400px] mx-auto px-8">
             <section class="py-20">
                 <h3 class="text-2xl md:text-4xl font-bold text-center">Edit your profile</h3>
                 <section class="my-10">
