@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel IT Magic Solutions</title>
+    <title>D & B Engineering</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="./assets/js/index.js"></script>
     <style>
@@ -41,7 +41,7 @@
             <h1 class="text-4xl sm:text-7xl font-black sm:leading-[80px]">Courses for</br> Everyone</h1>
             <div class="space-y-2 sm:space-y-4">
                 <p class="text-gray-700 text-lg sm:text-xl">Take any of our free online courses to<br /> add more skills to your skillset.</p>
-                <a href="./courses.php" class="inline-block">
+                <a href="./courses" class="inline-block">
                     <button class="bg-blue-500 text-bold text-white rounded-tl-xl rounded-br-xl px-4 py-2 sm:px-6 sm:py-4 font-bold hover:rounded-tr-xl hover:rounded-bl-xl hover:-translate-y-1 transition-all">View Courses</button>
                 </a>
             </div>

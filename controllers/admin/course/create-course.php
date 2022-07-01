@@ -1,9 +1,5 @@
 <?php
 
-if (!isset($_POST["course_name"], $_POST["course_title"], $_POST["course_description"], $_POST["course_credit_hours"], $_POST["course_price"], $_POST["course_curriculum_brief"], $_POST["course_aim"], $_POST["course_objectives"], $_POST["course_salient_features"], $_POST["course_entry_criteria"], $_POST["course_name"], $_POST["course_structure_downloadable"])) {
-    exit(header("Location: ../../public/admin/create-course.php"));
-}
-
 function create_course()
 {
     require_once("../../models/db/connectDB.php");
@@ -52,7 +48,8 @@ function create_course()
             $folder
         );
         $stmt->execute();
-        if ($stmt->num_rows > 0) {
+
+        if ($stmt->affected_rows > 0) {
             return true;
         } else {
             return false;
