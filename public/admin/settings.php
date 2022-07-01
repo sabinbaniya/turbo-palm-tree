@@ -52,12 +52,12 @@ if (isset($_POST["submit"])) {
                     <form action="./settings.php" method="POST" class="space-y-4 max-w-md mx-auto">
                         <div class="relative flex flex-col-reverse">
                             <i class="fa-solid fa-at absolute top-12 left-3 text-gray-600"></i>
-                            <input autocomplete="off" type="text" name="uname" onchange="changeInput()" id="uname" value='<?= $GLOBALS["res"]["username"]; ?>' class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                            <input required autocomplete="off" type="text" name="uname" oninput="changeInput()" id="uname" value='<?= $GLOBALS["res"]["username"]; ?>' class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                             <label for="uname">Username</label>
                         </div>
                         <div class="relative flex flex-col-reverse">
                             <i class="fa-solid fa-envelope absolute top-12 left-3 text-gray-600"></i>
-                            <input autocomplete="email" type="email" name="email" onchange="changeInput()" id="email" value='<?= $GLOBALS["res"]["email"]; ?>' class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                            <input required autocomplete="email" type="email" name="email" oninput="changeInput()" id="email" value='<?= $GLOBALS["res"]["email"]; ?>' class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                             <label for="email">Email</label>
                         </div>
                         <div>
