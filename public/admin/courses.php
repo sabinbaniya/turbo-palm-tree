@@ -39,9 +39,10 @@ if (!isset($_SESSION["admin_loggedin"])) {
             <?php
             require_once("../../controllers/admin/course/get-all-course.php");
             $stmt = get_all_course();
-            $stmt->bind_result($course_id, $course_name, $course_title, $course_price, $course_credit_hours, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $createdat, $updatedat);
 
             if ($stmt) {
+                $stmt->bind_result($course_id, $course_name, $course_title, $course_price, $course_credit_hours, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $createdat, $updatedat);
+
                 echo '<section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">';
                 echo '<section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">';
                 while ($stmt->fetch()) {
@@ -66,8 +67,8 @@ if (!isset($_SESSION["admin_loggedin"])) {
                 echo '</section>';
             } else {
                 echo "
-                    <div>
-                        No courses found!
+                    <div class='font-bold my-10 text-2xl  text-gray-800 underline'>
+                        <p>No courses found!</p>
                     </div>
                 ";
             }

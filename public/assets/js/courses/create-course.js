@@ -23,15 +23,10 @@ course_name.addEventListener("input", check_input);
 course_credit_hours.addEventListener("input", check_input);
 course_title.addEventListener("input", check_input);
 course_price.addEventListener("input", check_input);
-course_description.addEventListener("input", check_input);
-course_curriculum_brief.addEventListener("input", check_input);
-course_aim.addEventListener("input", check_input);
-course_objectives.addEventListener("input", check_input);
-course_salient_features.addEventListener("input", check_input);
-course_entry_criteria.addEventListener("input", check_input);
 course_structure_downloadable.addEventListener("input", check_input);
 
 function check_input(ev) {
+  console.log("first");
   if (ev.target.getAttribute("id") === "course_name") {
     generate_url(ev);
   }
@@ -40,12 +35,6 @@ function check_input(ev) {
     course_credit_hours.value &&
     course_title.value &&
     course_price.value &&
-    course_description.value &&
-    course_curriculum_brief.value &&
-    course_aim.value &&
-    course_objectives.value &&
-    course_salient_features.value &&
-    course_entry_criteria.value &&
     course_structure_downloadable.value
   ) {
     return activate_button();

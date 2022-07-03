@@ -21,7 +21,7 @@ if (isset($_SESSION["admin_loggedin"])) {
 
 <body class="bg-gray-100">
     <div class="min-h-screen flex space-y-8 flex-col justify-center items-center ">
-        <h3 class="text-3xl font-bold text-gray-700">Login to your admin account</h3>
+        <h3 class="text-3xl font-bold text-gray-700 text-center sm:text-left px-4">Login to your admin account</h3>
         <form action="../../controllers/admin/auth/login.php" method="POST" class="bg-white p-8 space-y-8 rounded-lg w-80" id="login_form">
             <div class="flex flex-col-reverse relative">
                 <i class="fa-solid fa-at absolute top-8 left-3 text-gray-600" id="username_icon"></i>

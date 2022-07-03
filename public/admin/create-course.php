@@ -101,6 +101,10 @@ if (isset($_POST["submit"])) {
                             <label for="course_entry_criteria">Course Entry Criteria</label>
                         </div>
                         <div class="relative flex flex-col-reverse">
+                            <input type="file" name="course_structure_details" id="course_structure_details" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                            <label for="course_structure_details">Course Structure Details</label>
+                        </div>
+                        <div class="relative flex flex-col-reverse">
                             <input type="file" name="course_structure_downloadable" id="course_structure_downloadable" accept="application/pdf" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                             <label for="course_structure_downloadable">Course Structure Downloadable (upload pdf)</label>
                         </div>
@@ -120,5 +124,17 @@ if (isset($_POST["submit"])) {
         </section>
     </section>
 </body>
+
+<!-- ck editor js script   -->
+<script src="../ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('course_entry_criteria')
+    CKEDITOR.replace('course_curriculum_brief')
+    CKEDITOR.replace('course_description')
+    CKEDITOR.replace('course_aim')
+    CKEDITOR.replace('course_objectives')
+    CKEDITOR.replace('course_salient_features')
+    CKEDITOR.replace('course_structure_details')
+</script>
 
 </html>
