@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Computer Operators Course
+        | D & B Engineering
+    </title>
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <?php require_once("../include/navbar.php") ?>
+    <section class="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-start">
+        <section class="basis-1/2">
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Curriculum Brief
+                </h3>
+                <p>
+                    "Computer Operator" is designed to produce employable workforce equipped with knowledge, skills and attitudes related to the clerical occupation.
+
+                    Once the trainees acquired the competencies they will have ample opportunity for wage employment and self-employment through which they will contribute in the national streamline of poverty reduction in the country.
+
+                    This curriculum is based on the job required to be performed by a computer operator. This course is designed to equip trainees with knowledge and skills of the field of on basic computer application. This course consists of three sections viz;: SOFTWARE SECTION, HARDWARE SECTION and NETWORK SECTION. Moreover, the SOFTWARE SECTION includes MS DOS, MS Window XP, Windows 7, Windows 8, Word Processing Program, Spreadsheet Program, Presentation Program, Database Program, Photo Editor Program and Email and Internet modules. Trainees will practice & learn skills using computer and peripherals necessary for the program.
+                </p>
+            </section>
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Aim
+                </h3>
+                <p>
+                    The main aim of this program is to produce employable Computer Operator who could provide clerical services in the government, semi government and private organizations as well as also creates self employment opportunities as well.
+                </p>
+            </section>
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Objectives
+                </h3>
+                <p>
+                    After completion of training the trainees will be able:
+                </p>
+                <p>
+                    To acquire the Concept of computer fundamentals
+                    To use MSDOS to edit and run different types of programs
+                    To Use MS Window XP, Windows 7, Widows 8 to customize your computer and edit, run different types of programs
+                    To use Word Processing Program to edit, write and publish anything
+                    To use Spreadsheet Program and keep simple daily transaction in proper way
+                    To create the slides and show them in desired way using Presentation Program.
+                    To prepare the required software to calculate and maintain the tables and files using Database Program
+                    To edit & Design the photo using Photo Editing Program.
+                    To browse Email and Internet
+                    To use of computer hardware & Network in office automation
+                </p>
+
+            </section>
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Salient Features
+                </h3>
+                <div>
+                    <div>
+                        Duration: The total duration of the course extends over 220 hours.
+
+                        Target group: The target group for this training program will be all interested individuals in the field computer application; with educational prerequisite of minimum SLC pass.
+
+                        Group size: The group size of this training program will be maximum 20, provided all necessary resources to practice the tasks/ competencies as specified in this curriculum
+
+                        Target location: The target location of this training program will be all over Nepal.
+
+                        Medium of Instruction: The medium of instruction for this training program will be Nepali or English or both.
+
+                        Pattern of attendance: Trainee should have 90% attendance during the training period to get the certificate.
+
+                        Focus of the program: This is a competency-based curriculum. This curriculum emphasizes on competency performance. 75% time is allotted for performance and remaining 25% time is for related technical knowledge. So, the main focus will be on performance of the specified competencies in the curriculum.
+
+                        Follow up suggestion:
+
+                        First follow up: Six months after the completion of the program
+
+                        Second follow up: Six months after the completion of the first follow up
+
+                        Follow up cycle: In a cycle of one year after the completion of the second follow up for five years
+
+                        Grading System
+
+                        The trainees will be graded as follows based on the marks in percentage secured by them in tests/ evaluations.
+
+                        Distinction: Passed with 80% or above
+
+                        First Division: passed with 75% or above
+
+                        Second Division: passed with 65% or above
+
+                        Third Division: passed with 60% or above
+
+                        Certificate requirement: The related training institute will provide the certificate of” Computer Operator (Basic computer Application" to those trainees who successfully complete the prescribed course and conducted evaluation.
+                    </div>
+                </div>
+            </section>
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Who is this course meant for
+                </h3>
+                <div>
+                    <div class="space-y-2">
+                        Entry Criteria
+
+                        Individuals who meet the following criteria will be allowed to enter this curricular program:
+
+                        Minimum of SLC pass
+
+                        Nepali citizen
+
+                        Minimum of 16 years of age
+
+                        Should pass entrance test
+                    </div>
+                </div>
+            </section>
+            <section class="my-20 space-y-6 text-gray-600">
+                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                    Curricular Structure
+                </h3>
+                <div class="space-y-2">
+                    <h4><a href="../assets/pdf/courses/Computer Operator, Revised- 2014.pdf" target="_blank" class="underline">Curriculum of&nbsp;Computer Operators Course.pdf&nbsp;</a></h4>
+                </div>
+            </section>
+        </section>
+        <section class="my-20 space-y-6 sticky md:top-8 shadow-lg rounded-xl p-8 w-full md:basis-1/3">
+            <h3 class="text-xl md:text-3xl font-bold text-gray-700">
+                Computer Operators Course
+            </h3>
+            <div class="text-gray-600 space-y-4">
+                <p>
+                    Credit Hours: hours
+                </p>
+                <p class="font-bold text-gray-700">
+                    Includes :
+                </p>
+                <p>
+                    Typing Course 15 days
+                </p>
+                <p>
+                    And all the curiculum listed here
+                </p>
+                <button class="w-full inline-block">
+                    <a href="#" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
+                </button>
+            </div>
+        </section>
+    </section>
+    <?php require_once("./include/footer.php") ?>
+</body>
+
+</html>

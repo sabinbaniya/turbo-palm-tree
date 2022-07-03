@@ -16,6 +16,8 @@ const course_structure_downloadable = document.getElementById(
   "course_structure_downloadable"
 );
 const btn = document.getElementById("btn");
+const gen_url = document.getElementById("gen-url");
+const course_url = document.getElementById("course_url");
 
 course_name.addEventListener("input", check_input);
 course_credit_hours.addEventListener("input", check_input);
@@ -29,7 +31,10 @@ course_salient_features.addEventListener("input", check_input);
 course_entry_criteria.addEventListener("input", check_input);
 course_structure_downloadable.addEventListener("input", check_input);
 
-function check_input() {
+function check_input(ev) {
+  if (ev.target.getAttribute("id") === "course_name") {
+    generate_url(ev);
+  }
   if (
     course_name.value &&
     course_credit_hours.value &&
@@ -64,4 +69,20 @@ function deactivate_button() {
   btn.classList.remove("bg-blue-500");
   btn.classList.remove("hover:bg-blue-400");
   btn.classList.remove("cursor-pointer");
+}
+
+function generate_url(ev) {
+  let content = ev.target.value;
+  if (content.length === 0) {
+    gen_url.innerText = "";
+    gen_url.parentElement.classList.add("hidden");
+    course_url.value = "";
+    return;
+  }
+  content = content.toLowerCase().replace(/\s+/g, " ").trim();
+  const tempArr = content.split(" ");
+  const generated_url = tempArr.join("-");
+  gen_url.parentElement.classList.remove("hidden");
+  gen_url.innerText = generated_url + ".php";
+  course_url.value = generated_url + ".php";
 }

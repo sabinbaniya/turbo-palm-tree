@@ -20,6 +20,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
 </head>
 
 <body>
+    <?php require_once("./include/navbar.php") ?>
 
 </body>
 
