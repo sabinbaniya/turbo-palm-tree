@@ -54,14 +54,10 @@ if (isset($_POST["submit"])) {
                                 <label for="course_name" title="used for making urls">Course url</label>
                             </div>
                             <div class="relative flex flex-col-reverse">
-                                <i class="fa-solid fa-clock absolute top-12 left-3 text-gray-600"></i>
-                                <input autocomplete="off" type="number" min="0" name="course_credit_hours" id="course_credit_hours" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
-                                <label for="course_credit_hours">Course Credit Hours</label>
+                                <i class="fa-solid fa-chain absolute top-12 left-3 text-gray-600"></i>
+                                <input autocomplete="off" type="text" name="course_url" id="course_url" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                                <label for="course_url">Url will be</label>
                             </div>
-                        </div>
-                        <div>
-                            <p class="hidden">Url will be: <span id="gen-url" class="underline"></span></p>
-                            <input type="hidden" class="hiden" name="course_url" id="course_url">
                         </div>
                         <div class="flex flex-col sm:flex-row sm:space-x-4">
                             <div class="relative flex flex-col-reverse">

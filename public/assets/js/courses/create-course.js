@@ -1,5 +1,4 @@
 const course_name = document.getElementById("course_name");
-const course_credit_hours = document.getElementById("course_credit_hours");
 const course_title = document.getElementById("course_title");
 const course_price = document.getElementById("course_price");
 const course_description = document.getElementById("course_description");
@@ -12,31 +11,18 @@ const course_salient_features = document.getElementById(
   "course_salient_features"
 );
 const course_entry_criteria = document.getElementById("course_entry_criteria");
-const course_structure_downloadable = document.getElementById(
-  "course_structure_downloadable"
-);
 const btn = document.getElementById("btn");
-const gen_url = document.getElementById("gen-url");
 const course_url = document.getElementById("course_url");
 
 course_name.addEventListener("input", check_input);
-course_credit_hours.addEventListener("input", check_input);
 course_title.addEventListener("input", check_input);
 course_price.addEventListener("input", check_input);
-course_structure_downloadable.addEventListener("input", check_input);
 
 function check_input(ev) {
-  console.log("first");
   if (ev.target.getAttribute("id") === "course_name") {
     generate_url(ev);
   }
-  if (
-    course_name.value &&
-    course_credit_hours.value &&
-    course_title.value &&
-    course_price.value &&
-    course_structure_downloadable.value
-  ) {
+  if (course_name.value && course_title.value && course_price.value) {
     return activate_button();
   }
   deactivate_button();
@@ -63,15 +49,11 @@ function deactivate_button() {
 function generate_url(ev) {
   let content = ev.target.value;
   if (content.length === 0) {
-    gen_url.innerText = "";
-    gen_url.parentElement.classList.add("hidden");
     course_url.value = "";
     return;
   }
   content = content.toLowerCase().replace(/\s+/g, " ").trim();
   const tempArr = content.split(" ");
   const generated_url = tempArr.join("-");
-  gen_url.parentElement.classList.remove("hidden");
-  gen_url.innerText = generated_url + ".php";
   course_url.value = generated_url + ".php";
 }

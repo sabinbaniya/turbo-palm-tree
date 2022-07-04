@@ -6,29 +6,24 @@ function create_course()
 
     $downloadable = $_FILES['course_structure_downloadable']['name'];
 
-    $tempname = $_FILES['course_structure_downloadable']['tmp_name'];
+    if ($downloadable) {
+        $tempname = $_FILES['course_structure_downloadable']['tmp_name'];
 
-    $folder = "../assets/pdf/courses/" . $downloadable;
+        $folder = "../assets/pdf/courses/" . $downloadable;
 
-    move_uploaded_file($tempname, $folder);
+        move_uploaded_file($tempname, $folder);
+    }
 
     $c_id = random_int(0, 2312312432599);
     $c_price = intval(mysqli_real_escape_string($conn, $_POST["course_price"]));
-    $c_hrs = intval(mysqli_real_escape_string($conn, $_POST["course_credit_hours"]));
-    $c_st_details = $_POST["course_structure_details"];
 
-    if ($c_st_details === null) {
-        $c_st_details = " ";
-    }
-
-    if ($stmt = $conn->prepare("INSERT INTO courses (course_id, course_name, course_price, course_title, course_credit_hours, course_description, course_curriculum_brief, course_aim, course_objectives, course_salient_features,course_entry_criteria, course_structure_downloadable, course_structure_details, course_url) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
+    if ($stmt = $conn->prepare("INSERT INTO courses (course_id, course_name, course_price, course_title, course_description, course_curriculum_brief, course_aim, course_objectives, course_salient_features,course_entry_criteria, course_structure_downloadable, course_structure_details, course_url) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)")) {
         $stmt->bind_param(
-            "dsisisssssssss",
+            "dsissssssssss",
             $c_id,
             $_POST["course_name"],
             $c_price,
             $_POST["course_title"],
-            $c_hrs,
             $_POST["course_description"],
             $_POST["course_curriculum_brief"],
             $_POST["course_aim"],
@@ -135,7 +130,12 @@ function create_course()
                                     </div>
                                 </div>
                             </section>
-                            <section class="my-20 space-y-6 text-gray-600">
+                            ' .
+                (mysqli_real_escape_string($conn, $_POST["course_structure_details"]) === null
+                    && mysqli_real_escape_string($conn, $folder) === null ?
+                    null :
+                    '
+                                    <section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Curricular Structure
                                 </h3>
@@ -147,24 +147,22 @@ function create_course()
                                     <h4><a href="' . mysqli_real_escape_string($conn, $folder) . '" target="_blank" class="underline">Curriculum of&nbsp;' . $_POST["course_title"] . '.pdf&nbsp;</a></h4>
                                 </div>
                             </section>
+                                    '
+
+                )
+                . '
+                            
                         </section>
                         <section class="my-20 space-y-6 sticky md:top-8 shadow-lg rounded-xl p-8 w-full md:basis-1/3">
                             <h3 class="text-xl md:text-3xl font-bold text-gray-700">
                                ' . mysqli_real_escape_string($conn, $_POST["course_title"]) . '
                             </h3>
                             <div class="text-gray-600 space-y-4">
-                                <p>
-                                    Credit Hours: ' . $c_hrs . ' hours
-                                </p>
-                                <p class="font-bold text-gray-700">
-                                    Includes :
-                                </p>
                                 <div id="includes">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_description"]) . '
+                                    <p> And all the curriculum listed here </p>
+
                                 </div>
-                                <p>
-                                    And all the curiculum listed here
-                                </p>
                                 <button class="w-full inline-block">
                                     <a href="#" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
                                 </button>
