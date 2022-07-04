@@ -101,7 +101,7 @@ if (isset($_POST["submit"])) {
                             <label for="course_entry_criteria">Course Entry Criteria</label>
                         </div>
                         <div class="relative flex flex-col-reverse">
-                            <input type="file" name="course_structure_details" id="course_structure_details" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                            <textarea rows="5" style="resize:none;" autocomplete="off" name="course_structure_details" id="course_structure_details" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 "></textarea>
                             <label for="course_structure_details">Course Structure Details</label>
                         </div>
                         <div class="relative flex flex-col-reverse">
