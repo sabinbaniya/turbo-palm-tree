@@ -56,7 +56,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
                             <a target="_blank" href="../courses/' . $course_url . '" class="inline-block">
                                 <button class="px-4 py-2 btn font-bold rounded-full hover:-translate-y-1 transition-all">View full</button>
                             </a>
-                            <a target="_blank" href="./edit-course.php?id' . $course_id . '" class="inline-block">
+                            <a target="_blank" href="./edit-course.php?id=' . $course_id . '" class="inline-block">
                                 <button class="px-4 py-2 bg-gray-800 font-bold rounded-full hover:-translate-y-1 transition-all">Edit Now</button>
                             </a>
                         </div>

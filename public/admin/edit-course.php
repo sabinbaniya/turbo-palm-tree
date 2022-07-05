@@ -23,6 +23,7 @@ if (!isset($_POST["submit"])) {
     }
 } else {
     require_once("../../controllers/admin/course/edit-course.php");
+
     $c_id = intval(htmlspecialchars($_POST["c_id"]));
     if (!$c_id) {
         exit(header("./index.php"));
@@ -105,7 +106,7 @@ if (!isset($_POST["submit"])) {
                         <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" class="space-y-4 max-w-lg mx-auto" enctype="multipart/form-data">
                             <div class="relative flex flex-col-reverse">
                                 <i class="fa-solid fa-chain absolute top-12 left-3 text-gray-600"></i>
-                                <input autocomplete="off" disabled value="<?= $course_url ?>" type="text" name="course_url" id="course_url" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                                <input autocomplete="off" value="<?= $course_url ?>" type="text" name="course_url" id="course_url" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                                 <label for="course_url">Url is</label>
                             </div>
                             <div>
