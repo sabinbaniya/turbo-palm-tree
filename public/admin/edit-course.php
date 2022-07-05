@@ -29,7 +29,12 @@ if (!isset($_POST["submit"])) {
         exit(header("./index.php"));
     }
     $res = edit_course_details($c_id);
-    echo $res;
+
+    if ($res === 0 || $res === 1) {
+        header("Location: ./edit-course.php?success=true");
+    } else {
+        header("Location: ./edit-course.php?success=false");
+    }
 }
 ?>
 
@@ -53,7 +58,7 @@ if (!isset($_POST["submit"])) {
         require_once("./include/notification.php");
         if (isset($_GET["success"])) {
             if ($_GET["success"] === "true") {
-                notification("Successfully edit a course", "success");
+                notification("Successfully edited a course", "success");
             } else {
                 notification("Couldn't edit that course, please try again later.", "failure");
             }
@@ -65,9 +70,9 @@ if (!isset($_POST["submit"])) {
                 if ($stmt) {
                     $stmt->bind_result($course_id, $course_name, $course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_url, $createdat, $updatedat);
                     $count = 0;
-                    echo '<section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">';
-                    echo '<section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">';
-                    echo '<table class="mx-auto rounded-lg border border-collapse overflow-x-auto">';
+                    echo '<section class="py-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">';
+                    echo '<section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-auto cursor-grab active:cursor-grabbing slider1" id="slider1">';
+                    echo '<table class="mx-auto rounded-lg border border-collapse">';
                     echo '<tr class="bg-gray-800 text-white">
                             <th class="border px-4 py-2 cursor-default" >Serial Number</th>
                             <th class="border px-4 py-2 cursor-default" >Name of Course</th>
@@ -78,7 +83,7 @@ if (!isset($_POST["submit"])) {
                         echo '<tr class="border hover:bg-gray-200">';
                         echo '<td class="border p-4 cursor-default" >' . ++$count . '</td>';
                         echo '<td class="border p-4 cursor-default" >' . $course_name . '</td>';
-                        echo '<td class="border p-4 cursor-default" >' . $course_url . '</td>';
+                        echo '<td class="border p-4 underline cursor-pointer" ><a href="../courses/' . $course_url . '">' . $course_name . '</a><i class="fa-solid fa-link px-2"></i></td>';
                         echo '<td class="border p-4 cursor-default" >
                                 <a href="?id=' . $course_id . '" class="hover:bg-gray-500 hover:text-white px-2 py-1 rounded-lg">Edit</a>
                               </td>';
@@ -89,8 +94,9 @@ if (!isset($_POST["submit"])) {
                     echo '</section>';
                 } else {
                     echo "
-                    <div>
-                       No courses found
+                    <div class='py-10'>
+                        <p class='text-gray-800 font-bold text-2xl md:text-4xl my-4'>No courses found !</p>
+                        <a href='./create-course.php' class='underline'>Create a new course</a>
                     </div>
                 ";
                 }

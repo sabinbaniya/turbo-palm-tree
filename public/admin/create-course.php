@@ -45,7 +45,7 @@ if (isset($_POST["submit"])) {
         <section class="max-w-[1400px] mx-auto px-8">
             <section class="py-20">
                 <h3 class="text-2xl md:text-4xl font-bold text-center">Create New Course</h3>
-                <section class="my-10">
+                <section class="my-10" onsubmit="return toggleDisable()">
                     <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" class="space-y-4 max-w-lg mx-auto" enctype="multipart/form-data">
                         <div class="flex flex-col sm:flex-row sm:space-x-4">
                             <div class="relative flex flex-col-reverse">
@@ -55,7 +55,7 @@ if (isset($_POST["submit"])) {
                             </div>
                             <div class="relative flex flex-col-reverse">
                                 <i class="fa-solid fa-chain absolute top-12 left-3 text-gray-600"></i>
-                                <input autocomplete="off" type="text" name="course_url" id="course_url" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
+                                <input autocomplete="off" disabled type="text" name="course_url" id="course_url" class="pr-4 pl-8 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                                 <label for="course_url">Url will be</label>
                             </div>
                         </div>
@@ -131,6 +131,11 @@ if (isset($_POST["submit"])) {
     CKEDITOR.replace('course_objectives')
     CKEDITOR.replace('course_salient_features')
     CKEDITOR.replace('course_structure_details')
+
+    function toggleDisable() {
+        document.getElementById("course_url").disabled = false;
+        return true;
+    }
 </script>
 
 </html>

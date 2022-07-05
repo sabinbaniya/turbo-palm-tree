@@ -83,8 +83,9 @@ function edit_course_details($course_id)
 
 function update_course_page($conn, $path, $folder)
 {
-    $myFile = fopen($path, "w");
-    $myStr = '
+    try {
+        $myFile = fopen($path, "w");
+        $myStr = '
                 <!DOCTYPE html>
                 <html lang="en">
 
@@ -129,23 +130,32 @@ function update_course_page($conn, $path, $folder)
                     <?php require_once("../include/navbar.php") ?>
                     <section class="max-w-[1400px] mx-auto px-8 flex flex-col md:flex-row justify-between items-start">
                         <section class="basis-1/2">
-                            <section class="my-20 space-y-6 text-gray-600">
+                            <section class="my-20 text-gray-600">
+                                ' . ($_POST["course_curriculum_brief"] !== "" ?
+
+            '<section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Curriculum Brief 
                                 </h3>
                                 <div class="changeList space-y-6">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_curriculum_brief"]) . '
                                 </div>
-                            </section>
-                            <section class="my-20 space-y-6 text-gray-600">
+                            </section>'
+            :
+            null)
+            . '
+                                    ' . ($_POST["course_aim"] !== "" ?
+
+                '<section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Aim
                                 </h3>
                                 <div class="changeList">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_aim"]) . '
                                 </div>
-                            </section>
-                            <section class="my-20 space-y-6 text-gray-600">
+                            </section>' : null) . '
+                            ' . ($_POST["course_objectives"] !== "" ?
+                '<section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Objectives
                                 </h3>
@@ -153,8 +163,10 @@ function update_course_page($conn, $path, $folder)
                                 ' . mysqli_real_escape_string($conn, $_POST["course_objectives"]) . '
                                 </div>
 
-                            </section>
-                            <section class="my-20 space-y-6 text-gray-600">
+                            </section>' : null)
+            . '
+                            ' . ($_POST["course_salient_features"] !== "" ?
+                '<section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Salient Features
                                 </h3>
@@ -163,8 +175,11 @@ function update_course_page($conn, $path, $folder)
                                         ' . mysqli_real_escape_string($conn, $_POST["course_salient_features"]) . '
                                     </div>
                                 </div>
-                            </section>
-                            <section class="my-20 space-y-6 text-gray-600">
+                            </section>' :
+                null) . '
+                            ' .
+            ($_POST["course_entry_criteria"] !== "" ?
+                '<section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Who is this course meant for
                                 </h3>
@@ -173,36 +188,40 @@ function update_course_page($conn, $path, $folder)
                                         ' . mysqli_real_escape_string($conn, $_POST["course_entry_criteria"]) . '
                                     </div>
                                 </div>
-                            </section>
+                            </section>' :
+                null)
+            . '
                             ' .
-        (mysqli_real_escape_string($conn, $_POST["course_structure_details"]) === ""
-            &&  $folder === null ?
-            null :
-            '
+            (mysqli_real_escape_string($conn, $_POST["course_structure_details"]) === ""
+                &&  $folder === null ?
+                null :
+                '
                                     <section class="my-20 space-y-6 text-gray-600">
                                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
                                     Curricular Structure
                                 </h3>
                                 <div class="space-y-2 changeList">
-                                <div>
+                                <div class="space-y-2">
                                 ' . (mysqli_real_escape_string($conn, $_POST["course_structure_details"]) !== "" ? mysqli_real_escape_string($conn, $_POST["course_structure_details"]) : null) . '
                                 </div>
                                     ' . ($folder !== null ? '<h4><a href="' . mysqli_real_escape_string($conn, $folder) . '" target="_blank" class="underline">Curriculum of&nbsp;' . $_POST["course_title"] . '.pdf&nbsp;</a></h4>' : null)
-            . '
+                . '
                                 </div>
                             </section>
                                     '
 
-        )
-        . '
+            )
+            . '
                             
                         </section>
+                        </section>
+
                         <section class="my-20 space-y-6 sticky md:top-8 shadow-lg rounded-xl p-8 w-full md:basis-1/3">
                             <h3 class="text-xl md:text-3xl font-bold text-gray-700">
                                ' . mysqli_real_escape_string($conn, $_POST["course_title"]) . '
                             </h3>
                             <div class="text-gray-600 space-y-4">
-                                <div id="includes">
+                                <div id="includes" class="space-y-4">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_description"]) . '
                                     <p> And all the curriculum listed here </p>
 
@@ -231,7 +250,10 @@ function update_course_page($conn, $path, $folder)
                 </html>
             ';
 
-    fwrite($myFile, $myStr);
-    fclose($myFile);
-    return true;
+        fwrite($myFile, $myStr);
+        fclose($myFile);
+        return true;
+    } catch (\Throwable $th) {
+        return false;
+    }
 }

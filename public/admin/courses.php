@@ -30,6 +30,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
             /* Firefox */
         }
     </style>
+    <script src="../assets/js/forColouringCourses.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
                     echo '
                     <div class="rounded-xl card text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-2 text-decor">' . $course_title . '</p>
-                        <div class="includes">
+                        <div class="includes overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical;">
                         ' . $course_description . '
                         </div>
                         <div>
@@ -76,7 +77,7 @@ if (!isset($_SESSION["admin_loggedin"])) {
                 echo '</section>';
             } else {
                 echo "
-                    <div class='rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-default flex flex-col justify-between items-start'>
+                    <div class='rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-default flex flex-col justify-between items-start my-10'>
                         <p class='text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-700 decoration-2'>Add Course</p>
                         <p class='text-gray-100'>Create a new course</p>
                         <a href='./create-course.php' class='inline-block'>
@@ -89,41 +90,5 @@ if (!isset($_SESSION["admin_loggedin"])) {
         </section>
     </section>
 </body>
-<script>
-    const includes = Array.from(document.getElementsByClassName("includes"));
-    includes.map(includes => {
-        const tempArr = Array.from(includes.children)
-        tempArr.map(el => {
-            if (el.innerText.includes("free") && el.innerText.trim().endsWith("free")) {
-                el.innerText = el.innerText.split("free")[0];
-                const sp = document.createElement("span");
-                sp.classList.add("bg-green-500", "rounded-full", "inline-block", "px-4", "py-1", "text-white");
-                sp.innerText = "Free";
-                el.appendChild(sp)
-            }
-        })
-    })
-
-    const cards = Array.from(document.getElementsByClassName("card"))
-    const textDecors = Array.from(document.getElementsByClassName("text-decor"))
-    const btns = Array.from(document.getElementsByClassName("btn"))
-
-    const colorArr = ["blue", "orange", "indigo", "emerald"];
-
-    cards.map((card, idx) => {
-        const className = `bg-${colorArr[idx]}-400`
-        card.classList.add(className)
-    })
-
-    textDecors.map((text, idx) => {
-        const className = `decoration-${colorArr[idx]}-500`
-        text.classList.add(className)
-    })
-
-    btns.map((btn, idx) => {
-        const className = `bg-${colorArr[idx]}-800`
-        btn.classList.add(className)
-    })
-</script>
 
 </html>

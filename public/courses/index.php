@@ -21,6 +21,7 @@
         }
     </style>
     <script src="../assets/js/courses/index.js" defer></script>
+    <script src="../assets/js/forColouringCourses.js"></script>
     <!-- font awesome icon cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -30,74 +31,6 @@
     <section class="lg:max-w-[1400px] px-8 mx-auto">
         <section class="my-20">
             <h3 class="font-bold text-2xl md:text-4xl">Here's what we currently offer</h3>
-            <!-- <section class="my-8 flex items-center justify-between overflow-x-hidden no-wrap space-x-4 relative ">
-                <section class="my-8 animatein flex items-center justify-between no-wrap space-x-4 overflow-x-scroll cursor-grab active:cursor-grabbing slider1" id="slider1">
-                    <div class="rounded-xl card bg-blue-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-blue-500 decoration-2">Computer System Administrator & Developers</p>
-                        <p class="text-gray-100">
-                        <p>Credit Hours: 1320 Hours</p>
-                        <p class="text-lg font-semibold">Includes: </p>
-                        <ul>
-                            <li>Foundation of IT <span class="bg-green-500 rounded-full inline-block px-4 py-1">Free</span></li>
-                            <li>and more...</li>
-                        </ul>
-                        </p>
-                        <a href="./computer-system-administrator-and-developer.php" class="inline-block">
-                            <button class="px-4 py-2 bg-blue-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
-                        </a>
-                    </div>
-                    <div class="rounded-xl card bg-emerald-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-emerald-500 decoration-2">Computer Operator Course</p>
-                        <p class="text-gray-100">
-                        <p>Credit Hours: 220 credit Hours</p>
-                        <p class="text-lg font-semibold">Includes: </p>
-                        <ul>
-                            <li>Typing Course 15 days <span class="bg-green-500 rounded-full inline-block px-4 py-1">Free</span></li>
-                            <li>and more...</li>
-                        </ul>
-                        </p>
-                        <a href="./computer-operator-course.php" class="inline-block">
-                            <button class="px-4 py-2 bg-emerald-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
-                        </a>
-                    </div>
-                    <div class="rounded-xl card bg-orange-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-orange-500 decoration-2">Foundation of IT</p>
-                        <p class="text-gray-100">
-                        <p class="text-lg font-semibold">Includes: </p>
-                        <ul>
-                            <li>Computer Fundamentals</li>
-                            <li>Assembling / Dessembling computer parts</li>
-                            <li>Fundamentals of web</li>
-                            <li>And more...</li>
-                        </ul>
-                        </p>
-                        <a href="./foundation-of-it.php" class="inline-block">
-                            <button class="px-4 py-2 bg-orange-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
-                        </a>
-                    </div>
-                    <div class="rounded-xl card bg-indigo-400 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-indigo-500 decoration-2">Typing Course</p>
-                        <p class="text-gray-100">
-                        <p class="text-lg font-semibold">Includes: </p>
-                        <ul>
-                            <li>English Typing</li>
-                            <li>Nepali Typing</li>
-                            <li>And more...</li>
-                        </ul>
-                        </p>
-                        <a href="./typing-course.php" class="inline-block">
-                            <button class="px-4 py-2 bg-indigo-800 font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
-                        </a>
-                    </div>
-                    <div class="rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 cursor-not-allowed opacity-30 flex flex-col justify-between items-start">
-                        <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-700 decoration-2">More Courses</p>
-                        <p class="text-gray-100">More courses coming soon!</p>
-                        <a href="" class="inline-block">
-                            <button class="px-4 py-2 bg-gray-800 font-bold rounded-full transition-all cursor-not-allowed">Coming soon</button>
-                        </a>
-                    </div>
-                </section>
-            </section> -->
             <?php
             require_once("../../controllers/admin/course/get-all-course.php");
             $stmt = get_all_course();
@@ -110,8 +43,9 @@
                     echo '
                     <div class="rounded-xl card text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col justify-between items-start">
                         <p class="text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-2 text-decor">' . $course_title . '</p>
-                        <div class="includes">
+                        <div class="includes overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical;">
                         ' . $course_description . '
+                        <p>And more...</p>
                         </div>
                             <a target="_blank" href="./' . $course_url . '" class="inline-block">
                                 <button class="px-4 py-2 btn font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
@@ -132,7 +66,7 @@
                 echo '</section>';
             } else {
                 echo "
-                    <div class='rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col opacity-50 justify-between items-start cursor-not-allowed'>
+                    <div class='rounded-xl card bg-gray-500 text-white p-8 space-y-4 flex-shrink-0 w-80 lg:w-96 h-96 flex flex-col opacity-50 justify-between items-start cursor-not-allowed my-10'>
                         <p class='text-xl font-semibold my-2 underline underline-offset-2 decoration-wavy decoration-gray-700 decoration-2'>New Courses</p>
                         <p class='text-gray-100'>New courses will be added soon!</p>
                         <a href='#' class='inline-block'>
@@ -172,43 +106,5 @@
         </footer>
     </footer>
 </body>
-
-<script>
-    document.getElementById("current_year").innerText = new Date().getFullYear();
-    const includes = Array.from(document.getElementsByClassName("includes"));
-    includes.map(includes => {
-        const tempArr = Array.from(includes.children)
-        tempArr.map(el => {
-            if (el.innerText.includes("free") && el.innerText.trim().endsWith("free")) {
-                el.innerText = el.innerText.split("free")[0];
-                const sp = document.createElement("span");
-                sp.classList.add("bg-green-500", "rounded-full", "inline-block", "px-4", "py-1", "text-white");
-                sp.innerText = "Free";
-                el.appendChild(sp)
-            }
-        })
-    })
-
-    const cards = Array.from(document.getElementsByClassName("card"))
-    const textDecors = Array.from(document.getElementsByClassName("text-decor"))
-    const btns = Array.from(document.getElementsByClassName("btn"))
-
-    const colorArr = ["blue", "orange", "indigo", "emerald"];
-
-    cards.map((card, idx) => {
-        const className = `bg-${colorArr[idx]}-400`
-        card.classList.add(className)
-    })
-
-    textDecors.map((text, idx) => {
-        const className = `decoration-${colorArr[idx]}-500`
-        text.classList.add(className)
-    })
-
-    btns.map((btn, idx) => {
-        const className = `bg-${colorArr[idx]}-800`
-        btn.classList.add(className)
-    })
-</script>
 
 </html>
