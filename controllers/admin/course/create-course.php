@@ -180,7 +180,7 @@ function create_course()
 
                                 </div>
                                 <button class="w-full inline-block">
-                                    <a href="#" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
+                                    <a href="href="./enroll.php?id=' . $c_id . '"" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
                                 </button>
                             </div>
                         </section>

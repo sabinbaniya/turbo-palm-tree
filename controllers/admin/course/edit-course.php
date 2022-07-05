@@ -70,7 +70,7 @@ function edit_course_details($course_id)
             return null;
         }
         $path = "../courses/" . $_POST["course_url"];
-        $res = update_course_page($conn, $path, $folder);
+        $res = update_course_page($conn, $path, $folder, $course_id);
         if ($res) {
             return $stmt->affected_rows;
         } else {
@@ -81,7 +81,7 @@ function edit_course_details($course_id)
     }
 }
 
-function update_course_page($conn, $path, $folder)
+function update_course_page($conn, $path, $folder, $course_id)
 {
     try {
         $myFile = fopen($path, "w");
@@ -227,7 +227,7 @@ function update_course_page($conn, $path, $folder)
 
                                 </div>
                                 <button class="w-full inline-block">
-                                    <a href="#" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
+                                    <a href="./enroll.php?id=' . $course_id . '" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
                                 </button>
                             </div>
                         </section>
