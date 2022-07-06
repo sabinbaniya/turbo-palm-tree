@@ -65,13 +65,11 @@ if (isset($_POST["submit"])) {
                             <label for="repass">Re-Type New Password</label>
                         </div>
                         <div>
-                            <input type="submit" disabled value="Update" name="submit" id="btn" class="px-4 py-2 w-full bg-blue-300 cursor-not-allowed font-bold text-white rounded-full">
+                            <input type="submit" disabled value="Update" name="submit" id="btn" class="px-4 py-2 w-full bg-blue-300 cursor-not-allowed font-bold text-white rounded-lg">
                         </div>
                         <div>
-                            <a href="./dashboard.php">
-                                <button class="px-4 py-2 w-full bg-stone-500 hover:bg-stone-400 cursor-pointer font-bold text-white rounded-full">
-                                    Cancel
-                                </button>
+                            <a href="./dashboard.php" class="px-4 py-2 w-full block bg-stone-500 hover:bg-stone-400 cursor-pointer font-bold text-white text-center rounded-lg">
+                                Cancel
                             </a>
                         </div>
                     </form>

@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   cards.map((card, idx) => {
+    if (idx === cards.length - 1) {
+      return;
+    }
     const className = `bg-${colorArr[idx]}-400`;
     card.classList.add(className);
   });
