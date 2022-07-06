@@ -3,7 +3,7 @@
 function get_course_details($id)
 {
     require_once("../../models/db/connectDB.php");
-    if ($stmt = $conn->prepare("SELECT course_title, course_price, course_description, course_curriculum_brief, course_aim, course_objectives, course_salient_features, course_entry_criteria, course_structure_downloadable, course_structure_details ,course_url FROM courses WHERE course_id = ?")) {
+    if ($stmt = $conn->prepare("SELECT course_id, course_title, course_price, course_description, course_curriculum_brief, course_aim, course_objectives, course_salient_features, course_entry_criteria, course_structure_downloadable, course_structure_details ,course_url FROM courses WHERE course_id = ?")) {
         $stmt->bind_param("d", $id);
         $stmt->execute();
         $stmt->store_result();
