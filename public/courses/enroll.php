@@ -33,6 +33,7 @@ if (!isset($_GET["success"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enroll in <?= $course_title ?></title>
+    <script src="../assets/js/courses/index.js" defer></script>
     <style>
         .slider1::-webkit-scrollbar {
             display: none;
