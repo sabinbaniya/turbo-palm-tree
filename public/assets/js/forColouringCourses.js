@@ -27,7 +27,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const textDecors = Array.from(document.getElementsByClassName("text-decor"));
   const btns = Array.from(document.getElementsByClassName("btn"));
 
-  const colorArr = ["blue", "orange", "indigo", "emerald"];
+  const colorArr = [
+    "blue",
+    "orange",
+    "indigo",
+    "emerald",
+    "amber",
+    "violet",
+    "purple",
+    "rose",
+    "fuchsia",
+    "teal",
+    "blue",
+    "orange",
+    "indigo",
+    "emerald",
+    "amber",
+    "violet",
+    "purple",
+    "rose",
+    "fuchsia",
+    "teal",
+    "blue",
+    "orange",
+    "indigo",
+    "emerald",
+    "amber",
+    "violet",
+    "purple",
+    "rose",
+    "fuchsia",
+    "teal",
+    "blue",
+    "orange",
+    "indigo",
+    "emerald",
+    "amber",
+    "violet",
+    "purple",
+    "rose",
+    "fuchsia",
+    "teal",
+  ];
 
   cards.map((card, idx) => {
     const className = `bg-${colorArr[idx]}-400`;

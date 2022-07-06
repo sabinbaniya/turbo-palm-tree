@@ -11,7 +11,7 @@ session_start();
 
 
 // check if a user is entering an already used email or username
-if ($stmt = $conn->prepare("SELECT username, email FROM users WHERE username = ? OR email = ?")) {
+if ($stmt = $conn->prepare("SELECT username, email FROM users WHERE username = ? OR email = ? LIMIT 1")) {
     $stmt->bind_param("ss", $_POST["username"], $_POST["email"]);
     $stmt->execute();
     $stmt->store_result();

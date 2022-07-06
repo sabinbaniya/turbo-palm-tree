@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <div class="bg-gray-100">
+
+    </div>
 
 </body>
 
