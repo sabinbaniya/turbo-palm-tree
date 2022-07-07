@@ -4,7 +4,6 @@ function enroll_course($course_id)
 {
     require("../../models/db/connectDB.php");
 
-
     $user_id = intval($_SESSION["id"]);
     if ($stmt = $conn->prepare("SELECT * from enrollments WHERE course_id = ? AND user_id = ? LIMIT 1")) {
         $stmt->bind_param("ii", $course_id, $user_id);
@@ -15,6 +14,14 @@ function enroll_course($course_id)
             $stmt = $conn->prepare("INSERT INTO enrollments (course_id, user_id) VALUES (?,?)");
             $stmt->bind_param("ii", $course_id, $user_id);
             $stmt->execute();
+            if ($stmt = $conn->prepare("UPDATE courses SET enrollment_count = enrollment_count + 1 WHERE course_id = ? LIMIT 1")) {
+                $stmt->bind_param("i", $course_id);
+                $stmt->execute();
+            }
+            if ($stmt = $conn->prepare("UPDATE users SET courses_enrolled = courses_enrolled + 1 WHERE id = ? LIMIT 1")) {
+                $stmt->bind_param("i", $user_id);
+                $stmt->execute();
+            }
             return $stmt->affected_rows;
         }
     } else {

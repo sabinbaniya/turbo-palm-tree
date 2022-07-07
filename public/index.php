@@ -134,7 +134,7 @@
                         ' . $course_description . '
                         <p>And more...</p>
                         </div>
-                            <a target="_blank" href="./' . $course_url . '" class="inline-block">
+                            <a target="_blank" href="./courses/' . $course_url . '" class="inline-block">
                                 <button class="px-4 py-2 btn font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
                             </a>
                     </div>
