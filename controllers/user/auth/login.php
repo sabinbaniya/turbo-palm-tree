@@ -9,8 +9,9 @@ if (!isset($_POST["password"], $_POST["username"])) {
 
 session_start();
 
-if ($stmt = $conn->prepare('SELECT id, password FROM users WHERE username = ? LIMIT 1')) {
-    $stmt->bind_param('s', $_POST['username']);
+if ($stmt = $conn->prepare('SELECT id, password FROM users WHERE username = ? AND email_verified = ? LIMIT 1')) {
+    $val = 1;
+    $stmt->bind_param('si', $_POST['username'], $val);
     $stmt->execute();
     $stmt->store_result();
 

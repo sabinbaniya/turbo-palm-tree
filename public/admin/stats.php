@@ -20,6 +20,17 @@ if (!isset($_SESSION["admin_loggedin"])) {
 </head>
 
 <body>
+    <?php
+    require_once("./include/navbar.php")
+    ?>
+    <section class="bg-gray-100">
+        <?php
+        require_once("../../controllers/admin/course/get-all-course.php");
+        $stmt = get_all_course();
+
+
+        ?>
+    </section>
 
 </body>
 

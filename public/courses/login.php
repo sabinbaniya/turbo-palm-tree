@@ -4,6 +4,19 @@ if (isset($_SESSION["loggedin"])) {
     header("Location: ./dashboard.php");
     exit;
 }
+
+if (isset($_GET["code"])) {
+    $code = intval($_GET["code"]);
+    require_once("../../controllers/user/auth/confirm-user-account.php");
+    $res = confirm_user_account($code);
+    if ($res) {
+        header("Location: ./login.php?accountconfirmed=true");
+        exit();
+    } else {
+        header("Location: ./login.php?accountconfirmed=false");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +33,26 @@ if (isset($_SESSION["loggedin"])) {
 </head>
 
 <body class="bg-gray-100">
+    <?php
+    require_once("../admin/include/notification.php");
+    if (isset($_GET["confirmationemailsent"])) {
+        if ($_GET["confirmationemailsent"] === "true") {
+            notification("Successfully signed up, Check email for confirming your account.", "success");
+        }
+        if ($_GET["confirmationemailsent"] === "false") {
+            notification("Couldn't sign up, Please try again later!", "failure");
+        }
+    }
+
+    if (isset($_GET["accountconfirmed"])) {
+        if ($_GET["accountconfirmed"] === "true") {
+            notification("Successfully confirmed your email, you can sign in now.", "success");
+        }
+        if ($_GET["accountconfirmed"] === "false") {
+            notification("Couldn't confirm your account, Please try again later!", "failure");
+        }
+    }
+    ?>
     <div class="min-h-screen flex space-y-8 flex-col justify-center items-center ">
         <h3 class="text-3xl font-bold text-gray-700">Login to your account</h3>
         <p class="text-gray-800">Don't have an account? <a href="./signup.php" class="underline underline-offset-2">Sign Up</a> here.</p>
