@@ -101,7 +101,7 @@ if (!isset($_POST["submit"])) {
                 }
             }
             if (!$show_all_courses && !isset($_POST["submit"])) {
-                $stmt2->bind_result($course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url);
+                $stmt2->bind_result($course_id, $course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url, $enrollment_count);
                 $stmt2->fetch();
                 $stmt2->close();
             ?>

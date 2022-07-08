@@ -90,6 +90,18 @@
                                 </div>
                             </section>
                             
+                                    <section class="my-20 space-y-6 text-gray-600">
+                                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">
+                                    Curricular Structure
+                                </h3>
+                                <div class="space-y-2 changeList">
+                                <div class="space-y-2">
+                                
+                                </div>
+                                    <h4><a href="" target="_blank" class="underline">Curriculum of&nbsp;Foundation of IT course.pdf&nbsp;</a></h4>
+                                </div>
+                            </section>
+                                    
                             
                         </section>
                         </section>
@@ -102,11 +114,12 @@
                                 <div id="includes" class="space-y-4">
                                     <p>Credit Hours: 48 hours</p><p><strong>Includes:</strong></p><p>Computer Fundamentals</p><p>Assembling / Dissembling computer parts</p>
                                     <p> And all the curriculum listed here </p>
+                                    <p> Price: Free</p>
 
                                 </div>
-                                <button class="w-full inline-block">
-                                    <a href="./enroll.php?id=1706265164404" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
-                                </button>
+                                 
+                                        <p class="bg-gray-200  text-black text-md px-4 py-2 w-full inline-block rounded-xl">This is a free course that's included in other course.</p>
+                                    
                             </div>
                         </section>
                     </section>

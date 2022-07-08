@@ -114,11 +114,12 @@
                                 <div id="includes" class="space-y-4">
                                     <p>Credit Hours: 1320 hours</p><p><strong>Includes :</strong></p><p>Fundamentals of IT Course free</p>
                                     <p> And all the curriculum listed here </p>
+                                    <p> Price: 150,000</p>
 
                                 </div>
-                                <button class="w-full inline-block">
-                                    <a href="./enroll.php?id=810005664055" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
-                                </button>
+                                 <button class="w-full inline-block">
+                                        <a href="href="./enroll.php?id=810005664055"" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
+                                    </button>
                             </div>
                         </section>
                     </section>
