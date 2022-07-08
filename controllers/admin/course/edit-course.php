@@ -262,7 +262,7 @@ function update_course_page($conn, $path, $folder, $course_id, $c_price, $course
                                  ' .
             ($c_price !== 0 ?
                 '<button class="w-full inline-block">
-                                        <a href="href="./enroll.php?id=' . $course_id . '"" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
+                                        <a href="./enroll.php?id=' . $course_id . '" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>
                                     </button>' :
                 '
                                         <p class="bg-gray-200  text-black text-md px-4 py-2 w-full inline-block rounded-xl">This is a free course that\'s included in other course.</p>

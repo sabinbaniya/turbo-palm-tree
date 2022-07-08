@@ -20,7 +20,13 @@ if (!isset($_GET["success"])) {
     $res = enroll_course(intval($course_id));
     if ($res === null) {
         header("Location: ./enroll.php?id=$c_id&success=false");
-    } else {
+    }
+
+    if ($res === "bad-request") {
+        header("Location: ./enroll.php?id=$c_id&success=false&message=badrequest");
+    }
+
+    if ($res === 0 || $res === 1) {
         header("Location: ./enroll.php?id=$c_id&success=true");
     }
 }
@@ -66,7 +72,11 @@ if (!isset($_GET["success"])) {
                         if ($_GET["success"] === "true") {
                             echo '<p>You have successfully enrolled in ' . $course_title . '</p>';
                         } else {
-                            echo '<p>But, You are already enrolled in ' . $course_title . '</p>';
+                            if (isset($_GET["message"])) {
+                                echo '<p>But you cannot directly learn ' . $course_title . ', As it is included in other course. View & Enroll in other course to enjoy this course for free.</p>';
+                            } else {
+                                echo '<p>But, You are already enrolled in ' . $course_title . '</p>';
+                            }
                         }
                     }
                     ?>
