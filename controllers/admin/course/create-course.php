@@ -177,7 +177,7 @@ function create_course()
                                 <div id="includes" class="space-y-4">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_description"]) . '
                                     <p> And all the curriculum listed here </p>
-
+                                    <p> Price: ' . number_format($c_price) . '</p>
                                 </div>
                                 <button class="w-full inline-block">
                                     <a href="href="./enroll.php?id=' . $c_id . '"" class="bg-blue-500 font-bold text-white text-xl px-4 py-2 w-full inline-block rounded-xl hover:bg-blue-400 focus:ring-4 ring-blue-200">Enroll Now</a>

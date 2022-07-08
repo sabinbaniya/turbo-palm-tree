@@ -29,7 +29,6 @@ if (!isset($_POST["submit"])) {
         exit(header("./index.php"));
     }
     $res = edit_course_details($c_id);
-
     if ($res === 0 || $res === 1) {
         header("Location: ./edit-course.php?success=true");
     } else {
@@ -162,6 +161,10 @@ if (!isset($_POST["submit"])) {
                             <div class="relative flex flex-col-reverse">
                                 <input type="file" name="course_structure_downloadable" id="course_structure_downloadable" accept="application/pdf" class="px-2 py-2 my-2 rounded-lg border-gray-300 border-2 focus:outline-none focus:border-gray-500 ">
                                 <label for="course_structure_downloadable">Course Structure Downloadable (upload pdf)</label>
+                            </div>
+                            <div class="relative flex flex-row space-x-4">
+                                <input type="checkbox" name="course_pdf_new" id="course_pdf_new" class="inline-block h-8 w-8">
+                                <label for="course_pdf_new">Keep the old course structure ? (unchecking will remove the previously uploaded pdf)</label>
                             </div>
                             <div>
                                 <input type="submit" value="Update" name="submit" id="btn" class="px-4 py-2 w-full bg-blue-500 hover:bg-blue-400 cursor-pointer font-bold text-white rounded-full">

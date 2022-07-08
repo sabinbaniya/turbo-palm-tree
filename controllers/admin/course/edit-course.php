@@ -24,7 +24,7 @@ function edit_course_details($course_id)
 
     require_once("../../models/db/connectDB.php");
 
-    if ($stmt = $conn->prepare("SELECT course_structure_downloadable FROM courses WHERE course_id = ?")) {
+    if ($stmt = $conn->prepare("SELECT course_structure_downloadable AS course_link FROM courses WHERE course_id = ?")) {
         try {
             if ($_FILES["course_structure_downloadable"]["name"] === "") {
                 $folder = null;
@@ -37,8 +37,39 @@ function edit_course_details($course_id)
 
                 move_uploaded_file($tempname, $folder);
             }
-
-            $stmt = $conn->prepare("UPDATE courses SET course_title = ?, 
+            $stmt->bind_param("i", $course_id);
+            $stmt->execute();
+            $stmt->store_result();
+            $stmt->bind_result($course_link);
+            $stmt->fetch();
+            if (isset($_POST["course_pdf_new"])) {
+                $folder = "dont-change";
+                $stmt = $conn->prepare("UPDATE courses SET course_title = ?, 
+                course_price = ?, 
+                course_description = ?, 
+                course_curriculum_brief = ?, 
+                course_aim = ?,
+                course_objectives = ?,
+                course_salient_features = ?,
+                course_entry_criteria = ?,
+                course_structure_details = ?
+                WHERE course_id = ?
+                ");
+                $stmt->bind_param(
+                    "sisssssssi",
+                    $_POST["course_title"],
+                    $course_price,
+                    $_POST["course_description"],
+                    $_POST["course_curriculum_brief"],
+                    $_POST["course_aim"],
+                    $_POST["course_objectives"],
+                    $_POST["course_salient_features"],
+                    $_POST["course_entry_criteria"],
+                    $_POST["course_structure_details"],
+                    $course_id
+                );
+            } else {
+                $stmt = $conn->prepare("UPDATE courses SET course_title = ?, 
                 course_price = ?, 
                 course_description = ?, 
                 course_curriculum_brief = ?, 
@@ -50,27 +81,28 @@ function edit_course_details($course_id)
                 course_structure_downloadable = ?
                 WHERE course_id = ?
                 ");
-            $stmt->bind_param(
-                "sissssssssi",
-                $_POST["course_title"],
-                $course_price,
-                $_POST["course_description"],
-                $_POST["course_curriculum_brief"],
-                $_POST["course_aim"],
-                $_POST["course_objectives"],
-                $_POST["course_salient_features"],
-                $_POST["course_entry_criteria"],
-                $_POST["course_structure_details"],
-                $folder,
-                $course_id
-            );
+                $stmt->bind_param(
+                    "sissssssssi",
+                    $_POST["course_title"],
+                    $course_price,
+                    $_POST["course_description"],
+                    $_POST["course_curriculum_brief"],
+                    $_POST["course_aim"],
+                    $_POST["course_objectives"],
+                    $_POST["course_salient_features"],
+                    $_POST["course_entry_criteria"],
+                    $_POST["course_structure_details"],
+                    $folder,
+                    $course_id
+                );
+            }
             $stmt->execute();
         } catch (\Throwable $th) {
             return $th;
             return null;
         }
         $path = "../courses/" . $_POST["course_url"];
-        $res = update_course_page($conn, $path, $folder, $course_id);
+        $res = update_course_page($conn, $path, $folder, $course_id, $course_price, $course_link);
         if ($res) {
             return $stmt->affected_rows;
         } else {
@@ -81,7 +113,7 @@ function edit_course_details($course_id)
     }
 }
 
-function update_course_page($conn, $path, $folder, $course_id)
+function update_course_page($conn, $path, $folder, $course_id, $c_price, $course_structure_downloadable)
 {
     try {
         $myFile = fopen($path, "w");
@@ -204,7 +236,7 @@ function update_course_page($conn, $path, $folder, $course_id)
                                 <div class="space-y-2">
                                 ' . (mysqli_real_escape_string($conn, $_POST["course_structure_details"]) !== "" ? mysqli_real_escape_string($conn, $_POST["course_structure_details"]) : null) . '
                                 </div>
-                                    ' . ($folder !== null ? '<h4><a href="' . mysqli_real_escape_string($conn, $folder) . '" target="_blank" class="underline">Curriculum of&nbsp;' . $_POST["course_title"] . '.pdf&nbsp;</a></h4>' : null)
+                                    ' . ($folder !== null ? ($folder === "dont-change" ? '<h4><a href="' . $course_structure_downloadable . '" target="_blank" class="underline">Curriculum of&nbsp;' . $_POST["course_title"] . '.pdf&nbsp;</a></h4>' : '<h4><a href="' . mysqli_real_escape_string($conn, $folder) . '" target="_blank" class="underline">Curriculum of&nbsp;' . $_POST["course_title"] . '.pdf&nbsp;</a></h4>') : null)
                 . '
                                 </div>
                             </section>
@@ -224,6 +256,7 @@ function update_course_page($conn, $path, $folder, $course_id)
                                 <div id="includes" class="space-y-4">
                                     ' . mysqli_real_escape_string($conn, $_POST["course_description"]) . '
                                     <p> And all the curriculum listed here </p>
+                                    <p> Price: ' . number_format($c_price) . '</p>
 
                                 </div>
                                 <button class="w-full inline-block">

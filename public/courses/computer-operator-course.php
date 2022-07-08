@@ -112,8 +112,9 @@
                             </h3>
                             <div class="text-gray-600 space-y-4">
                                 <div id="includes" class="space-y-4">
-                                    <p>Credit Hours: 220 hours</p><p>Includes :</p><p>Typing Course 15 days free</p><p>&nbsp;</p>
+                                    <p>Credit Hours: 220 hours</p><p>Includes :</p><p>Typing Course 15 days free</p>
                                     <p> And all the curriculum listed here </p>
+                                    <p> Price: 20,000</p>
 
                                 </div>
                                 <button class="w-full inline-block">

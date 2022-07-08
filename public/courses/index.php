@@ -46,6 +46,7 @@
                         <div class="includes overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical;">
                         ' . $course_description . '
                         <p>And more...</p>
+                        <p class="my-4 font-bold">Price : ' . ($course_price !== 0 ?  number_format($course_price) : "Free") . '</p>
                         </div>
                             <a target="_blank" href="./' . $course_url . '" class="inline-block">
                                 <button class="px-4 py-2 btn font-bold rounded-full hover:-translate-y-1 transition-all">Know More</button>
