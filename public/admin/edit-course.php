@@ -15,7 +15,7 @@ if (!isset($_POST["submit"])) {
         if (!$c_id) {
             exit(header("./index.php"));
         }
-        $stmt = get_course_details($c_id);
+        $stmt2 = get_course_details($c_id);
     } else {
         $show_all_courses = true;
         require_once("../../controllers/admin/course/get-all-course.php");
@@ -102,9 +102,9 @@ if (!isset($_POST["submit"])) {
                 }
             }
             if (!$show_all_courses && !isset($_POST["submit"])) {
-                $stmt->bind_result($course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url);
-                $stmt->fetch();
-                $stmt->close();
+                $stmt2->bind_result($course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url);
+                $stmt2->fetch();
+                $stmt2->close();
             ?>
                 <section class="py-20">
                     <h3 class="text-2xl md:text-4xl font-bold text-center">Edit `<?= $course_title ?>` Course</h3>
