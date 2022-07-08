@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"])) {
 require_once("../../controllers/admin/course/edit-course.php");
 $c_id = $_GET["id"];
 $stmt = get_course_details($c_id);
-$stmt->bind_result($course_id, $course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url);
+$stmt->bind_result($course_id, $course_title, $course_price, $course_description, $course_curriculum_brief, $course_aim, $course_objectives, $course_salient_features, $course_entry_criteria, $course_structure_downloadable, $course_structure_details, $course_url, $enrollment_count);
 $stmt->fetch();
 
 require_once("../../controllers/user/course/enroll.php");
