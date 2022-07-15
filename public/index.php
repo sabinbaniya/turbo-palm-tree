@@ -57,6 +57,14 @@
             render_course($path, $fromAdmin);
             ?>
         </section>
+        <div id="about" class="h-10"></div>
+        <section class="mb-20 mt-10">
+            <h3 class="text-center text-2xl md:text-4xl font-bold text-gray-900">So, Who are we ?</h3>
+            <div>
+                <p class="text-center my-4 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique recusandae facilis enim, culpa porro at labore sint doloremque accusamus, debitis aperiam, consequatur fuga adipisci omnis ipsa velit incidunt laboriosam. Officia at, non voluptatibus unde quia veniam facere perferendis quod animi, molestias, hic numquam in dolores. Numquam nobis, magni, fuga quo rerum rem, odio accusantium assumenda magnam hic libero? Asperiores dolorem quisquam neque corporis assumenda vitae, autem eum esse aut a modi iste placeat quod! Eum suscipit inventore, accusamus dolorum aliquid reprehenderit molestiae veritatis necessitatibus praesentium tempore cumque numquam nostrum vero porro. Recusandae, nostrum eius! Eum aperiam exercitationem ullam necessitatibus.</p>
+                <img src="" alt="">
+            </div>
+        </section>
     </section>
 
     <section class="my-20">
@@ -68,7 +76,7 @@
                         <p class="text-7xl font-bold text-gray-900" style="font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
                         <p class=" text-stone-500">CEO of JHON INC.</p>
                     </div>
-                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-md">
                 </div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
@@ -80,7 +88,7 @@
                         <p class="text-7xl font-bold text-gray-900" style="font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
                         <p class=" text-stone-500">CEO of JHON INC.</p>
                     </div>
-                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-md">
                 </div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
@@ -92,7 +100,7 @@
                         <p class="text-7xl font-bold text-gray-900" style="font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
                         <p class=" text-stone-500">CEO of JHON INC.</p>
                     </div>
-                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-md">
                 </div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>
@@ -104,7 +112,7 @@
                         <p class="text-7xl font-bold text-gray-900" style="font-family: 'League Gothic' , sans-serif;">Jhon Doe</p>
                         <p class=" text-stone-500">CEO of JHON INC.</p>
                     </div>
-                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-xl">
+                    <img src="./assets/images/image-john.jpg" alt="Jhon's Image" class="h-24 rounded-md">
                 </div>
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum optio dolore voluptatibus rem officiis veritatis mollitia sint quae, explicabo doloribus blanditiis, sunt asperiores ullam, velit inventore voluptates tempora illum. Aperiam?</p>

@@ -43,7 +43,7 @@ function get_relative_path($path)
         return "../index.php";
         break;
       case "about":
-        return "../about.php";
+        return "../#about";
         break;
       case "courses":
         return "./";
@@ -63,7 +63,7 @@ function get_relative_path($path)
         return "../index.php";
         break;
       case "about":
-        return "../about.php";
+        return "../#about";
         break;
       case "courses":
         return "../courses";
@@ -81,7 +81,7 @@ function get_relative_path($path)
       return "./index.php";
       break;
     case "about":
-      return "./about.php";
+      return "./#about";
       break;
     case "courses":
       return "./courses";
@@ -98,7 +98,7 @@ function get_relative_path($path)
 echo "
     <!-- nav component starts  -->
     <header
-      class='flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8'
+      class='flex justify-between items-center h-20 max-w-[1400px] mx-auto px-8 sticky top-0 bg-white z-[100]'
     >
       <div>
         <p class=''>D & B Engineering</p>
@@ -108,14 +108,14 @@ echo "
         <ul class='flex space-x-8'>
           <li
           >
-            <a href='"  . get_relative_path("") .  "'
+            <a id='home_menu_item' href='"  . get_relative_path("") .  "'
             class='text-lg inline-block " . (check_path("") ? "bg-gray-900 text-white" : "hover:bg-gray-300") . "  px-2 py-1 rounded-lg transition-all'
             >Home</a>
           </li>
           
           <li
           >
-            <a href='"  . get_relative_path("about") .  "' 
+            <a id='about_menu_item' href='"  . get_relative_path("about") .  "' 
             class='text-lg inline-block " . (check_path("about") ? "bg-gray-900 text-white" : "hover:bg-gray-300") . " px-2 py-1  transition-all rounded-lg'
             >About Us</a>
           </li>
@@ -207,6 +207,22 @@ echo "
     <script>
         function closeMenu() {
             document.getElementById('menu').checked = false;
+        }
+
+        const url = window.location.href;
+        if(url.endsWith('#about')){
+          const home = document.getElementById('home_menu_item');
+          const about = document.getElementById('about_menu_item');
+
+          console.log(home, about);
+
+          home.classList.remove('bg-gray-900');
+          home.classList.remove('text-white');
+          home.classList.add('hover:bg-gray-300');
+          about.classList.remove('hover:bg-gray-300');
+          about.classList.add('bg-gray-900');
+          about.classList.add('text-white');
+
         }
     </script>
     <!-- nav component ends  -->
