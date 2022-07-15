@@ -57,12 +57,12 @@
             render_course($path, $fromAdmin);
             ?>
         </section>
-        <div id="about" class="h-10"></div>
+        <div id="about" class="h-20"></div>
         <section class="mb-20 mt-10">
-            <h3 class="text-center text-2xl md:text-4xl font-bold text-gray-900">So, Who are we ?</h3>
-            <div>
-                <p class="text-center my-4 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique recusandae facilis enim, culpa porro at labore sint doloremque accusamus, debitis aperiam, consequatur fuga adipisci omnis ipsa velit incidunt laboriosam. Officia at, non voluptatibus unde quia veniam facere perferendis quod animi, molestias, hic numquam in dolores. Numquam nobis, magni, fuga quo rerum rem, odio accusantium assumenda magnam hic libero? Asperiores dolorem quisquam neque corporis assumenda vitae, autem eum esse aut a modi iste placeat quod! Eum suscipit inventore, accusamus dolorum aliquid reprehenderit molestiae veritatis necessitatibus praesentium tempore cumque numquam nostrum vero porro. Recusandae, nostrum eius! Eum aperiam exercitationem ullam necessitatibus.</p>
-                <img src="" alt="">
+            <h3 class="text-center text-2xl md:text-4xl font-bold text-gray-900 my-10">So, Who are we ?</h3>
+            <div class="flex flex-col md:flex-row justify-center md:justify-between items-start md:space-x-12 space-y-8 md:space-y-0">
+                <img src=" ./assets/images/hero-2.jpg" class="max-w-sm lg:max-w-lg mx-auto md:mx-0 rounded-lg">
+                <p class=" mb-4 text-gray-500 basis-3/5 text-center md:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos similique recusandae facilis enim, culpa porro at labore sint doloremque accusamus, debitis aperiam, consequatur fuga adipisci omnis ipsa velit incidunt laboriosam. Officia at, non voluptatibus unde quia veniam facere perferendis quod animi, molestias, hic numquam in dolores. Numquam nobis, magni, fuga quo rerum rem, odio accusantium assumenda magnam hic libero? Asperiores dolorem quisquam neque corporis assumenda vitae, autem eum esse aut a modi iste placeat quod! Eum suscipit inventore, accusamus dolorum aliquid reprehenderit molestiae veritatis necessitatibus praesentium tempore cumque numquam nostrum vero porro. Recusandae, nostrum eius! Eum aperiam exercitationem ullam necessitatibus.</p>
             </div>
         </section>
     </section>

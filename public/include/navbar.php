@@ -125,12 +125,6 @@ echo "
             class='text-lg inline-block  " . (check_path("courses") ? "bg-gray-900 text-white" : "hover:bg-gray-300") . "  px-2 py-1 transition-all rounded-lg'
             >Courses</a>
           </li>
-          <li
-          >
-            <a href='"  . get_relative_path("services") .  "'
-            class='text-lg inline-block " . (check_path("services") ? "bg-gray-900 text-white" : "hover:bg-gray-300") . "  px-2 py-1 transition-all rounded-lg'
-            >Our Services</a>
-          </li>
         </ul>
       </nav>
       <div class='hidden lg:block'>
@@ -182,7 +176,6 @@ echo "
           <a onclick='closeMenu()' class='py-2 mt-4' href='"  . get_relative_path("") .  "'>Home</a>
           <a onclick='closeMenu()' class='py-2' href='"  . get_relative_path("about") .  "'>About Us </a>
           <a onclick='closeMenu()' class='py-2' href='"  . get_relative_path("courses") .  "'>Courses </a>
-          <a onclick='closeMenu()' class='py-2 mb-4' href='"  . get_relative_path("services") .  "'>Our Services</a>
           " .
   (get_relative_path("courses") === "./" ?
     "<button>

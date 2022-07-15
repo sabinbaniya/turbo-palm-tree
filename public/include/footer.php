@@ -10,9 +10,9 @@ echo '
             <section class="basis-1/3 ">
                 <ul class="space-y-4">
                     <li><a href="../public">Home</a></li>
-                    <li><a href="./about.php">About us</a></li>
+                    <li><a href="../public/#about">About us</a></li>
                     <li><a href="./courses">Courses</a></li>
-                    <li><a href="./services.php">Our services</a></li>
+                    <li><a href="./contact.php">Contact Us</a></li>
                 </ul>
             </section>
             <section>
