@@ -1,3 +1,35 @@
+<?php
+if (isset($_POST["submit"])) {
+    $name = $_POST["full_name"];
+    $email = $_POST["email"];
+    $mobile = $_POST["phone"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    require_once("./courses/send_email.php");
+    require_once("./db/connectDB.php");
+
+    if ($stmt = $conn->prepare("INSERT INTO contact_form_submissions (name, mobile,subject, message,email) VALUES (?,?,?,?,?)")) {
+        $stmt->bind_param("sssss", $name, $mobile, $subject, $message, $email);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $res = send_contact_email($name, $email, $subject, $mobile, $message);
+            if ($res) {
+                header("Location: ./?formsubmitted=true");
+            } else {
+                header("Location: ./?formsubmitted=false");
+            }
+        } else {
+            header("Location: ./?formsubmitted=false");
+        }
+    } else {
+        header("Location: ./?formsubmitted=false");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

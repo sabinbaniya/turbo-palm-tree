@@ -115,3 +115,55 @@ function send_confirmation_email($name, $email, $username, $confirmation_code)
         echo ($mail->ErrorInfo);
     }
 }
+
+function send_contact_email($name, $email, $subject, $mobile, $message)
+{
+
+    // Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+
+        //Send using SMTP
+
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp-mail.outlook.com';                       //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = $_ENV["email_account_address"];              //SMTP username
+        $mail->Password   = $_ENV["email_account_password"]; //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 587;
+        $mail->SMTPSecure = "TLS";                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //Recipients
+        $mail->setFrom($_ENV["email_account_address"], $_ENV["email_account_name"]);
+        $mail->addAddress('baniya.sabinn@gmail.com', 'Sabin Baniya');     //Add a recipient    
+        $mail->addReplyTo($_ENV["reply_to_email_account_address"], $_ENV["reply_to_email_account_name"]);
+        $message = htmlspecialchars($message);
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = "Wooshhh somebody dropped a message in the contact form of Hotel's Website";
+        $mail->Body    = "
+            <hr/>
+            <h4>Here's their contact details:</h4>
+            <hr/>
+            <p>Name : $name</p>
+            <p>Email: $email</p>
+            <p>Phone: $mobile</p>
+            <hr/>
+            <h4>Here's what they had to say: </h4>
+            <hr/>
+            <p>Subject: $subject</p>
+            <p>Message: $message</p>
+        ";
+        $mail->AltBody = 'Please use a client-mail that supports html';
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+        return false;
+        echo ($mail->ErrorInfo);
+    }
+}
